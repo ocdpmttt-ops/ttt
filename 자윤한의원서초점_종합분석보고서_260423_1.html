@@ -1,0 +1,2721 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자윤한의원 서초점 | 박황진 원장 종합 분석 보고서 (완전판)</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --ink: #1a1a2e;
+    --deep: #16213e;
+    --accent: #0f3460;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --red: #c0392b;
+    --green: #1a6b4a;
+    --cream: #faf8f2;
+    --warm: #f5f0e8;
+    --muted: #7a7068;
+    --border: rgba(201,168,76,0.25);
+    --shadow: 0 8px 32px rgba(26,26,46,0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--deep);
+    padding: 48px 56px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(201,168,76,0.12) 0%, transparent 60%);
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+  }
+  .header-title h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header-title h2 {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 1px;
+  }
+  .header-badge {
+    background: var(--gold);
+    color: var(--deep);
+    padding: 8px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .header-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 32px;
+    border-top: 1px solid rgba(201,168,76,0.3);
+    padding-top: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .info-item {
+    padding-right: 24px;
+  }
+  .info-item + .info-item { border-left: 1px solid rgba(255,255,255,0.1); padding-left: 24px; }
+  .info-label {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .info-value {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+  }
+
+  /* MAIN LAYOUT */
+  .container { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+
+  /* SECTION */
+  .section {
+    padding: 48px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .section-num {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--border);
+    line-height: 1;
+    letter-spacing: -2px;
+    min-width: 56px;
+  }
+  .section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--deep);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 4px;
+  }
+  .section-sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* STAT CARDS */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 24px 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+  }
+  .stat-card.highlight::before { background: var(--red); }
+  .stat-card.positive::before { background: var(--green); }
+  .stat-label {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .stat-value {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--deep);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-value span { font-size: 14px; font-weight: 400; color: var(--muted); }
+  .stat-change {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .stat-change.up { color: var(--green); }
+  .stat-change.down { color: var(--red); }
+
+  /* CHART CONTAINERS */
+  .chart-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .chart-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .chart-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .chart-box.wide { grid-column: span 2; }
+  .chart-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--deep);
+    margin-bottom: 4px;
+  }
+  .chart-desc {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .chart-wrap { position: relative; height: 260px; }
+  .chart-wrap.tall { height: 320px; }
+  .chart-wrap.short { height: 200px; }
+
+  /* RANKING DISPLAY */
+  .rank-display {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .rank-num {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .rank-of {
+    font-size: 16px;
+    color: var(--muted);
+  }
+
+  /* RANK GRID */
+  .rank-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .rank-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+  }
+  .rank-card .year-badge {
+    display: inline-block;
+    background: var(--deep);
+    color: var(--gold);
+    font-size: 10px;
+    padding: 2px 10px;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .rank-card .category {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .rank-card .rank-big {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--deep);
+    line-height: 1;
+  }
+  .rank-card .rank-big em { color: var(--gold); font-style: normal; }
+  .rank-card .total-members {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+  .rank-card .percentile {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--green);
+    margin-top: 4px;
+  }
+
+  /* CS TABLE */
+  .cs-issue-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+  }
+  .cs-issue-table th {
+    background: var(--deep);
+    color: var(--gold);
+    padding: 10px 14px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    font-weight: 500;
+  }
+  .cs-issue-table td {
+    padding: 10px 14px;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    vertical-align: top;
+  }
+  .cs-issue-table tr:nth-child(even) td { background: var(--warm); }
+  .cs-issue-table tr:hover td { background: rgba(201,168,76,0.08); }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .tag-red { background: rgba(192,57,43,0.12); color: var(--red); }
+  .tag-green { background: rgba(26,107,74,0.12); color: var(--green); }
+  .tag-blue { background: rgba(15,52,96,0.12); color: var(--accent); }
+  .tag-gold { background: rgba(201,168,76,0.15); color: #9a7530; }
+
+  /* ANALYSIS BOX */
+  .analysis-box {
+    background: var(--deep);
+    color: rgba(255,255,255,0.85);
+    padding: 28px 32px;
+    border-radius: 4px;
+    margin-top: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .analysis-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: var(--gold);
+  }
+  .analysis-box h4 {
+    color: var(--gold-light);
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  .analysis-box ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .analysis-box ul li {
+    font-size: 13px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .analysis-box ul li::before {
+    content: '→';
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* STRATEGY SECTION */
+  .strategy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+  }
+  .strategy-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+  }
+  .strategy-card h4 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    color: var(--deep);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .strategy-card h4 .icon {
+    width: 32px; height: 32px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .strategy-card p { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+  .strategy-list { list-style: none; }
+  .strategy-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    font-size: 13px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .strategy-list li:last-child { border-bottom: none; }
+  .strategy-list li::before {
+    content: '▸';
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--deep);
+    padding: 24px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer p { font-size: 11px; color: rgba(255,255,255,0.4); }
+
+  /* DIVIDER */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 32px 0;
+    opacity: 0.4;
+  }
+
+  /* WARNING BOX */
+  .warning-box {
+    background: rgba(192,57,43,0.08);
+    border: 1px solid rgba(192,57,43,0.25);
+    border-left: 4px solid var(--red);
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .warning-box h5 {
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .warning-box p { font-size: 13px; color: var(--ink); }
+
+  /* INFO NOTE */
+  .info-note {
+    background: rgba(15,52,96,0.06);
+    border: 1px solid rgba(15,52,96,0.15);
+    border-left: 4px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 16px;
+  }
+
+  .page-break { display: block; height: 40px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .rank-grid { grid-template-columns: repeat(2, 1fr); }
+    .chart-grid-2 { grid-template-columns: 1fr; }
+    .chart-box.wide { grid-column: span 1; }
+    .analysis-box ul { grid-template-columns: 1fr; }
+  }
+
+/* ===== 섹션 4-1 추가 스타일 ===== */
+  :root {
+    --col26: #E8873A;
+    --col25: #4472C4;
+    --star: #e53935;
+  }
+.page-title {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .page-title h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 22px;
+    color: var(--deep);
+    font-weight: 700;
+  }
+  .page-title p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  .legend-bar {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 16px 0 28px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    color: var(--ink);
+  }
+  .legend-dot {
+    width: 14px; height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-star {
+    color: var(--star);
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .tab-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 8px 20px;
+    border: 1.5px solid var(--border);
+    background: white;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .tab-btn:hover { border-color: var(--gold); color: var(--deep); }
+  .tab-btn.active {
+    background: var(--deep);
+    border-color: var(--deep);
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .chart-panel {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 24px 24px 16px;
+    box-shadow: 0 4px 16px rgba(26,26,46,0.08);
+    display: none;
+  }
+  .chart-panel.visible { display: block; }
+
+  .panel-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--deep);
+    margin-bottom: 3px;
+  }
+  .panel-year {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--deep);
+    text-align: center;
+    margin-bottom: 12px;
+    font-family: 'Noto Serif KR', serif;
+  }
+  .panel-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .chart-wrap {
+    position: relative;
+    height: 280px;
+  }
+
+  .rank-summary {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: var(--warm);
+    border-radius: 4px;
+    border-left: 3px solid var(--gold);
+    font-size: 12px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .rank-summary strong { color: var(--star); }
+
+  .all-charts-view {
+    display: none;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .all-charts-view.visible { display: block; }
+
+  .year-section {
+    margin-bottom: 32px;
+  }
+  .year-section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--deep);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+  .four-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .four-grid .chart-wrap { height: 220px; }
+
+}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="header-title">
+      <h1>자윤한의원 서초점 · 박황진 원장</h1>
+      <h2>회원사 Key 211724 | 종합 분석 보고서 · 2025~2026</h2>
+    </div>
+    <div class="header-badge">Confidential</div>
+  </div>
+  <div class="header-info">
+    <div class="info-item">
+      <div class="info-label">한의원명</div>
+      <div class="info-value">자윤한의원 서초점</div>
+    </div>
+    <div class="info-item">
+      <div class="info-label">원장 / 사업자</div>
+      <div class="info-value">박황진 원장 / 349-97-01127</div>
+    </div>
+    <div class="info-item">
+      <div class="info-label">소재지</div>
+      <div class="info-value">서울 서초구 서초중앙로 26 래미안서초유니빌 208호 <span style="background:#f5ede0;color:#9a7530;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;margin-left:6px;">면적 121.59㎡</span></div>
+    </div>
+    <div class="info-item">
+      <div class="info-label">가입일 / 연락처</div>
+      <div class="info-value">2021년 3월 2일 / 02-521-1088</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- SECTION 1: 연도별 매출 현황 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div>
+        <div class="section-title">연도별 매출 현황</div>
+        <div class="section-sub">전체 처방 · 탕전 · 비급여(일반) · 약속 매출 추이</div>
+      </div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card positive">
+        <div class="stat-label">26년 총처방금액 (1~3월)</div>
+        <div class="stat-value">3,294<span>만원</span></div>
+        <div class="stat-change up">▲ 25년 월평균 대비 +31.0%</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">25년 총처방금액 (탕전기준)</div>
+        <div class="stat-value">14,094<span>만원</span></div>
+        <div class="stat-change up">▲ 월평균 1,174만원</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">26년 탕전처방금액 (1~3월)</div>
+        <div class="stat-value">3,214<span>만원</span></div>
+        <div class="stat-change up">▲ 전월대비 +33.1%</div>
+      </div>
+      <div class="stat-card highlight">
+        <div class="stat-label">25년 약속 포함 총처방</div>
+        <div class="stat-value">14,927<span>만원</span></div>
+        <div class="stat-change down">▼ 24년 대비 -4.8%</div>
+      </div>
+    </div>
+
+    <div class="chart-grid-2">
+      <div class="chart-box">
+        <div class="chart-title">월별 탕전처방 금액 추이</div>
+        <div class="chart-desc">25년 전체 + 26년 1~3월 비교</div>
+        <div class="chart-wrap">
+          <canvas id="monthlyChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">월별 탕전처방 건수 추이</div>
+        <div class="chart-desc">25년 전체 + 26년 1~3월</div>
+        <div class="chart-wrap">
+          <canvas id="monthlyCountChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-note" style="margin-top:0; margin-bottom:16px; border-left: 4px solid var(--accent, #c8a97e); background: #fdf8f2;">
+      📌 <strong>26년 3월 처방 급등 사유 분석</strong><br><br>
+      3월 총 196건으로 직전 2개월(1월 142건·2월 142건) 대비 약 <strong>+38% 급증</strong>했습니다. 주문내역 분석 결과 주요 원인은 다음과 같습니다.<br><br>
+      ① <strong>기존 환자의 재처방 주기가 3월에 2번 겹침</strong> — 당월 2회 이상 처방받은 환자가 2월 32명(67건)에서 3월 <strong>58명(125건)</strong>으로 급증. 전체 증가분(+54건)을 이 요인만으로 설명 가능하며, 2주 간격 재처방 주기가 한 달 안에 2회 쌓인 구조<br>
+      ② <strong>재진 환자 재처방 증가</strong> — 신규 환자는 39명→55명(+16명)으로 소폭 증가한 반면, 재진 처방은 103건→141건(+38건)으로 증가분의 약 70%를 차지<br>
+      ③ <strong>신규 환자 비율은 평소와 동일</strong> — 28.1%로 전월(27.5%) 수준이며, 특별한 신규 유입 급증은 없었음<br><br>
+      <span style="color:#888; font-size:11px;">※ 복용자명 기준 분석 — 동명이인 미구분 / 묶음 내 2인 관계(가족·지인 등)는 데이터상 확인 불가</span>
+    </div>
+
+    <div class="chart-grid-2">
+      <div class="chart-box">
+        <div class="chart-title">연도별 매출 구성</div>
+        <div class="chart-desc">24년 vs 25년 vs 26년(추정) 처방 구성 비교</div>
+        <div class="chart-wrap short">
+          <canvas id="yearCompareChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">25년 월별 처방건수 히트맵</div>
+        <div class="chart-desc">월별 처방 활성도 패턴</div>
+        <div class="chart-wrap short">
+          <canvas id="heatmapChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis-box">
+      <h4>📊 매출 현황 요약 인사이트</h4>
+      <ul>
+        <li>26년 3월 처방건수 196건으로 전체 3개월 중 최고 — 성장세 가속화</li>
+        <li>25년 월평균 탕전금액 1,174만원 → 26년 월평균 1,070만원 (3개월 기준)</li>
+        <li>비급여(일반) 탕전 100% 비중 — 급여 처방 없이 완전 비급여 운영 모델</li>
+        <li>25년 약속처방 매출 3,980,000원 포함 — 약속 제품군 활용도 낮음</li>
+        <li>3월 처방 급증(+38%): 봄철 환자 증가 패턴 — 4~6월 성수기 예상</li>
+        <li>25년 7월(14,175,503원), 9월(15,357,402원) 특히 높음 — 여름/가을 성수기 뚜렷</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 2: 월별 탕전처방 현황 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div>
+        <div class="section-title">월별 탕전처방 현황</div>
+        <div class="section-sub">2025년 전체 및 2026년 1~3월 상세 처방 현황</div>
+      </div>
+    </div>
+
+    <div class="chart-box" style="margin-bottom:24px;">
+      <div class="chart-title">25년 + 26년 탕전처방 월별 금액 상세</div>
+      <div class="chart-desc">26년(1~3월)을 25년과 동일 월 기준으로 비교 — 파란색: 25년, 주황색: 26년</div>
+      <div class="chart-wrap tall">
+        <canvas id="detailMonthChart"></canvas>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table class="cs-issue-table">
+        <thead>
+          <tr>
+            <th>월</th>
+            <th>25년 처방건수</th>
+            <th>25년 처방금액</th>
+            <th>26년 처방건수</th>
+            <th>26년 처방금액</th>
+            <th>전년 동월 대비</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1월</td><td>142건</td><td>11,295,225원</td><td>141건</td><td>9,780,332원</td><td><span class="tag tag-red">▼ -13.4%</span></td></tr>
+          <tr><td>2월</td><td>130건</td><td>10,433,828원</td><td>142건</td><td>9,594,212원</td><td><span class="tag tag-red">▼ -8.0%</span></td></tr>
+          <tr><td>3월</td><td>142건</td><td>10,955,912원</td><td>196건</td><td>12,766,574원</td><td><span class="tag tag-green">▲ +16.5%</span></td></tr>
+          <tr><td>4월</td><td>161건</td><td>11,971,831원</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>5월</td><td>161건</td><td>12,196,046원</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>6월</td><td>165건</td><td>12,665,109원</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>7월</td><td>176건</td><td>14,175,503원</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>8월</td><td>144건</td><td>10,789,660원</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>9월</td><td>187건</td><td>15,357,402원</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>10월</td><td>132건</td><td>9,039,268원</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>11월</td><td>164건</td><td>10,658,337원</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr><td>12월</td><td>157건</td><td>11,399,937원</td><td>-</td><td>-</td><td>-</td></tr>
+          <tr style="background:#f0ede6; font-weight:600;">
+            <td>합계/평균</td>
+            <td>1,861건</td>
+            <td>140,938,058원</td>
+            <td>479건(3개월)</td>
+            <td>32,141,118원</td>
+            <td>월평균: 10,714,000원</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-note">
+      💡 <strong>처방 패턴 특이사항:</strong> 서초점은 휴진 관련 특이 패턴이 있음 — CS 기록에 "매주 목요일/일요일 휴진" 확인. 이에 따라 수요일/토요일 발송 회피 요청이 정기적으로 발생. 특히 명절(설/추석)·연휴 전후 배송 스케줄 조정 요청 빈도 높음.
+    </div>
+  </div>
+
+  <!-- SECTION 3: CS 품질/이물질/파손 이슈 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div>
+        <div class="section-title">CS 품질 / 이물질 / 파손 이슈 현황</div>
+        <div class="section-sub">2025~2026년 3월 품질 관련 CS 접수 내역</div>
+      </div>
+    </div>
+
+    <div class="warning-box">
+      <h5>⚠ 심각 이슈 — 이물질 (벌레) 발견</h5>
+      <p><strong>2025년 5월 13일:</strong> 4/28 출고 처방에서 이물질(벌레) 발견. 환자 3개월치 결제분 152만원 적립금 환불 완료. 구태훈 원장님, 장병태 팀장님 확인 완료. (CS 코드: 32186)</p>
+    </div>
+
+    <div class="info-note" style="margin-bottom:16px;">
+      ℹ️ 문의분류가 없는 항목(회색)은 <strong>원장님이 직접 접수한 CS가 아닌 탕전실 내부 처리 기록</strong>입니다. (요청사항·답변내용 모두 내부 기재)
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="cs-issue-table">
+        <thead>
+          <tr>
+            <th>접수일</th>
+            <th>문의분류</th>
+            <th>문의유형</th>
+            <th>요청사항 (원문)</th>
+            <th>답변내용 (원문)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-01-02</td>
+            <td><span class="tag tag-blue">내부기록</span></td>
+            <td>-</td>
+            <td>배송 중 파우치 터짐으로 전체 재처방하여 나감.</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2025-01-07</td>
+            <td><span class="tag tag-blue">내부기록</span></td>
+            <td>-</td>
+            <td>배송 중 파우치 터짐이 발생하여 부분 재처방 하여 나감</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2025-01-17</td>
+            <td><span class="tag tag-blue">내부기록</span></td>
+            <td>-</td>
+            <td>배송 중 파우치 터짐으로 부분 재처방하여 나감</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2025-02-06</td>
+            <td><span class="tag tag-blue">내부기록</span></td>
+            <td>-</td>
+            <td>이전 처방에 배송 중 터짐으로 6팩 부분 재처방하여 나감</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2025-03-05</td>
+            <td><span class="tag tag-blue">내부기록</span></td>
+            <td>-</td>
+            <td>이전 처방에 배송 파우치 터짐으로 이번 처방에 부분 재처방하여 나감</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2025-05-07</td>
+            <td><span class="tag tag-blue">내부기록</span></td>
+            <td>-</td>
+            <td>파우치 주입구가 내려온 상태에서 차단기가 내려가 약액이 전부 소실됨. 전체 재처방함.</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2025-05-13</td>
+            <td><span class="tag tag-red">품질/이물질/파손 관련</span></td>
+            <td><span class="tag tag-red">이물질</span></td>
+            <td>2025.05.13. 공동탕전실 접수건 4/28 월 우체국 출고 한약을 먹고 이물질이 걸려서 뱉어보니 이렇게 벌레가 나왔다고 합니다. 수령하신 약은 거의 다 복용하셨다고합니다. 확인 후 연락드리겠다고 말씀드렸습니다. 환자분께서 약먹기를 거부하시고 환불을 요청하셨다고 합니다. 3개월치 결제(152만원)를 하였다고합니다.</td>
+            <td>구태훈원장님, 장병태팀장님 확인완료 환자 3개월치 결제분 152만원 적립금 환불완료(25.05.14 탕전운영부_김현)</td>
+          </tr>
+          <tr>
+            <td>2025-05-27</td>
+            <td><span class="tag tag-blue">내부기록</span></td>
+            <td>-</td>
+            <td>조제지시사항에 6포 추가 남겨주신 요청 취소하심 (23년도 3월달에 택배사고로 터진 후 감수반하탕 처방에 매번 6포 추가를 요청하셔서 유선상 확인하여 취소함)</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2025-07-10</td>
+            <td><span class="tag tag-blue">내부기록</span></td>
+            <td>-</td>
+            <td>추출 중 작업자 실수로 인한 벨브 열림으로 약액 전부 소실되어 전체 재처방함.</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2025-08-13</td>
+            <td><span class="tag tag-red">품질/이물질/파손 관련</span></td>
+            <td><span class="tag tag-gold">파손/불량</span></td>
+            <td>박미나님 7월18일 접수건 탕약터짐 사고 발생하였습니다. 오늘 오후에 새 한약 처방 접수 들어갈 예정인데 6팩 추가로 더해주시면됩니다</td>
+            <td>안녕하세요 옥천당 공동탕전실 한약사 박찬주입니다. 오늘 오후에 처방 넣어주시는 건은 다음주 월요일에 발송될 예정입니다. 8/18일에 6팩 추가로 더해서 발송해드리도록 하겠습니다. 감사합니다.^^</td>
+          </tr>
+          <tr>
+            <td>2025-08-16</td>
+            <td><span class="tag tag-blue">내부기록</span></td>
+            <td>-</td>
+            <td>배송중에 탕약사고가 발생해서 6팩 부분재처방하여 나감.</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2025-08-25</td>
+            <td><span class="tag tag-blue">내부기록</span></td>
+            <td>-</td>
+            <td>포장팀에서 차트를 보지 않고 추가 파우치를 폐기하여 6팩 다시 재처방하여 나감</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2025-09-08</td>
+            <td><span class="tag tag-blue">내부기록</span></td>
+            <td>-</td>
+            <td>탕전중 벨브 열림으로 약액이 모두 소모하여 전체 재처방(녹용은 살림)</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2025-09-11</td>
+            <td><span class="tag tag-blue">내부기록</span></td>
+            <td>-</td>
+            <td>작업 시 차단기가 내려가서 기계를 교체하는 과정에서 기계 세팅에 오류가 생겨 약액이 부족하여 전체 재처방함. 3호기/DPP-305</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="chart-grid-2" style="margin-top:8px;">
+      <div class="chart-box">
+        <div class="chart-title">CS 이슈 유형별 분포</div>
+        <div class="chart-desc">전체 CS 건수 881건 유형 분석</div>
+        <div class="chart-wrap short">
+          <canvas id="csTypeChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">월별 CS 접수 건수 (26년 1~3월)</div>
+        <div class="chart-desc">문의 유형별 월별 추이</div>
+        <div class="chart-wrap short">
+          <canvas id="csMonthChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3-1: CS 문의 분석 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3-1</div>
+      <div>
+        <div class="section-title">CS 문의 유형 분석 및 처방 패턴 분석</div>
+        <div class="section-sub">CS 내용 기반 처방 종류·질환 패턴 분석 (전체 881건)</div>
+      </div>
+    </div>
+
+    <div class="chart-grid-2" style="margin-bottom:24px;">
+      <div class="chart-box">
+        <div class="chart-title">CS 문의 유형 분류 (전체 881건)</div>
+        <div class="chart-desc">주요 문의 카테고리별 빈도</div>
+        <div class="chart-wrap">
+          <canvas id="csDetailChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">주요 CS 키워드 빈도</div>
+        <div class="chart-desc">요청사항 주요 패턴 (상대 비중)</div>
+        <div style="margin-top:16px;">
+          <div style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px;font-size:12px;">
+              <span>녹용품질보증서 동봉 요청</span><span style="color:var(--gold);font-weight:700;">약 340건</span>
+            </div>
+            <div style="background:#eee;border-radius:4px;height:10px;overflow:hidden;">
+              <div style="background:var(--gold);height:100%;width:88%;border-radius:4px;"></div>
+            </div>
+          </div>
+          <div style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px;font-size:12px;">
+              <span>배송일 지정</span><span style="color:var(--accent);font-weight:700;">약 180건</span>
+            </div>
+            <div style="background:#eee;border-radius:4px;height:10px;overflow:hidden;">
+              <div style="background:var(--accent);height:100%;width:47%;border-radius:4px;"></div>
+            </div>
+          </div>
+          <div style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px;font-size:12px;">
+              <span>주소 변경</span><span style="color:var(--green);font-weight:700;">약 100건</span>
+            </div>
+            <div style="background:#eee;border-radius:4px;height:10px;overflow:hidden;">
+              <div style="background:var(--green);height:100%;width:26%;border-radius:4px;"></div>
+            </div>
+          </div>
+          <div style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px;font-size:12px;">
+              <span>주문 취소</span><span style="color:#7b5ea7;font-weight:700;">약 95건</span>
+            </div>
+            <div style="background:#eee;border-radius:4px;height:10px;overflow:hidden;">
+              <div style="background:#7b5ea7;height:100%;width:25%;border-radius:4px;"></div>
+            </div>
+          </div>
+          <div style="margin-bottom:10px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px;font-size:12px;">
+              <span>영문증명서 첨부</span><span style="color:#e67e22;font-weight:700;">약 55건</span>
+            </div>
+            <div style="background:#eee;border-radius:4px;height:10px;overflow:hidden;">
+              <div style="background:#e67e22;height:100%;width:14%;border-radius:4px;"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:3px;font-size:12px;">
+              <span>처방내용 수정 / 복용법</span><span style="color:var(--muted);font-weight:700;">약 40건</span>
+            </div>
+            <div style="background:#eee;border-radius:4px;height:10px;overflow:hidden;">
+              <div style="background:var(--muted);height:100%;width:10%;border-radius:4px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 처방 분석 -->
+    <div style="margin-bottom:20px; font-family:'Noto Serif KR',serif; font-size:16px; font-weight:600; color:var(--deep); border-left:4px solid var(--gold); padding-left:14px;">
+      CS 내용 기반 처방 패턴 분석
+    </div>
+
+    <div class="chart-grid-2" style="margin-bottom:24px;">
+      <div class="chart-box">
+        <div class="chart-title">취소 처방명 빈도 (CS 답변 기준, 총 41건)</div>
+        <div class="chart-desc">주문 취소 요청 시 답변에 기재된 처방명 집계</div>
+        <div class="chart-wrap tall">
+          <canvas id="cancelPrescChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">영문증명서 처방명 × 질환 분포 (총 33건)</div>
+        <div class="chart-desc">영문처방증명서 파일명에서 추출한 처방명·질환 조합</div>
+        <div class="chart-wrap tall">
+          <canvas id="engPrescChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-grid-2" style="margin-bottom:24px;">
+      <div class="chart-box">
+        <div class="chart-title">영문증명서 대상 질환 분포</div>
+        <div class="chart-desc">파일명 기준 질환 카테고리 (33건)</div>
+        <div class="chart-wrap short">
+          <canvas id="diseaseChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">처방 포트폴리오 종합 정리</div>
+        <div class="chart-desc">실제 탕전 주문내역 기준 — 총 2,362건 (전체 처방 종류 55종)</div>
+        <div style="margin-top:12px; overflow-x:auto;">
+          <table class="cs-issue-table" style="font-size:12px;">
+            <thead>
+              <tr>
+                <th>처방명</th>
+                <th>처방 건수</th>
+                <th>비율</th>
+                <th>주요 적응증</th>
+                <th>비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>시호가용골모려탕</strong></td><td>1,883건</td><td>79.7%</td><td>신경증, 불면, 갱년기, 우울, 스트레스</td><td><span class="tag tag-red">압도적 주처방</span></td></tr>
+              <tr><td><strong>시호거금가령탕</strong></td><td>161건</td><td>6.8%</td><td>신경증, 갱년기, 열증</td><td><span class="tag tag-red">2위 처방</span></td></tr>
+              <tr><td><strong>대청룡탕</strong></td><td>85건</td><td>3.6%</td><td>감기, 면역, 발열, 비만</td><td><span class="tag tag-gold">계절성 처방</span></td></tr>
+              <tr><td><strong>황기계지오물탕</strong></td><td>59건</td><td>2.5%</td><td>혈액순환, 수족냉증, 관절</td><td><span class="tag tag-blue">부가 처방</span></td></tr>
+              <tr><td><strong>시호계지탕</strong></td><td>22건</td><td>0.9%</td><td>감기, 소화기, 복통</td><td><span class="tag tag-blue">부가 처방</span></td></tr>
+              <tr><td><strong>시령탕-설사형</strong></td><td>21건</td><td>0.9%</td><td>설사, 소화기, 수분대사</td><td><span class="tag tag-blue">부가 처방</span></td></tr>
+              <tr><td><strong>시호가미강탕</strong></td><td>19건</td><td>0.8%</td><td>신경증, 냉증</td><td><span class="tag tag-blue">변형 처방</span></td></tr>
+              <tr><td><strong>시호가작약탕</strong></td><td>12건</td><td>0.5%</td><td>신경증, 생리통</td><td><span class="tag tag-blue">변형 처방</span></td></tr>
+              <tr><td><strong>월비가반하탕</strong></td><td>12건</td><td>0.5%</td><td>부종, 기침, 호흡기</td><td><span class="tag tag-blue">부가 처방</span></td></tr>
+              <tr><td><strong>계지이월비일탕</strong></td><td>9건</td><td>0.4%</td><td>부종, 관절통</td><td><span class="tag tag-blue">부가 처방</span></td></tr>
+              <tr><td><strong>감수반하탕</strong></td><td>8건</td><td>0.3%</td><td>수분대사, 복수</td><td><span class="tag tag-green">소수 처방</span></td></tr>
+              <tr><td>도인승기탕·환 / 하어혈탕 / 백호가계지탕 / 갈근가반하탕 등</td><td>각 1~5건</td><td>—</td><td>어혈, 변비, 열증, 소화기</td><td><span class="tag tag-green">소수 처방</span></td></tr>
+              <tr><td>경옥고스틱 / 자운고 / 사향공진단 (외용·보약류)</td><td>13건</td><td>0.5%</td><td>보양, 피부 외용</td><td><span class="tag tag-green">약속처방</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis-box">
+      <h4>🔍 처방 패턴 종합 분석 — 실제 탕전 주문내역 기반 (총 2,362건)</h4>
+      <ul>
+        <li><strong>주처방 시호가용골모려탕 완전 독점 (79.7%):</strong> 원방·9/10 농도 조정 버전 합산 1,883건 — 불면·신경증·갱년기 중장년 여성이 핵심 환자군. 단일 처방으로 클리닉 특화도가 매우 높은 수준</li>
+        <li><strong>2위 시호거금가령탕 (6.8%, 161건):</strong> 시호가용골모려탕의 변형 처방으로 열증·갱년기 환자 대상 — 핵심 처방과 같은 계열 내에서 세밀한 변증 처방 운용</li>
+        <li><strong>대청룡탕 (3.6%, 85건):</strong> 급성 감기·면역·발열 처방 — 계절성 신규 환자 유입 처방군으로 기능</li>
+        <li><strong>황기계지오물탕 (2.5%, 59건):</strong> 농도별(x1.5, x2, x3) 세분화 처방 운용 — 혈액순환·수족냉증 환자 맞춤 용량 조정 시스템화</li>
+        <li><strong>시호 계열 처방이 전체의 88% 이상:</strong> 시호가용골모려탕·시호거금가령탕·시호계지탕·시호가미강탕·시호가작약탕 합산 — 시호제 특화 클리닉으로 명확히 포지셔닝</li>
+        <li><strong>소화기·부종 처방 다양화:</strong> 시령탕(21건), 월비가반하탕(12건), 계지이월비일탕(9건), 감수반하탕(8건) — 주처방 외 수분대사·소화기 부가 처방 체계 보유</li>
+        <li><strong>약속처방(보약·외용) 소량 보유:</strong> 경옥고스틱·자운고·사향공진단 합산 13건 — 탕전 중심 클리닉 성격 명확, 약속처방 매출 비중 낮음과 일치</li>
+        <li><strong>묶음 처방(커플·가족 처방) 다수 확인:</strong> 동일 묶음 번호로 2인 동시 처방 — 가족 단위 환자 관리 패턴 존재</li>
+      </ul>
+    </div>
+
+    <div class="info-note">
+      💡 <strong>특이 CS 사례:</strong> 23년 3월 택배사고(감수반하탕 6포 터짐) 이후 매번 6포 추가를 요청하다가 25년 5월 유선 확인 후 해당 요청 취소 처리됨 — CS기록 원문: <em>"23년도 3월달에 택배사고로 터진 후 감수반하탕 처방에 매번 6포 추가를 요청하셔서 유선상 확인하여 취소함"</em>
+    </div>
+  </div>
+
+  <!-- SECTION 4: 처방 순위 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">04</div>
+      <div>
+        <div class="section-title">전체 탕전처방 중 211724 원장님의 처방 순위</div>
+        <div class="section-sub">매출이 있는 회원 기준 순위 — 26년 및 25년</div>
+      </div>
+    </div>
+
+    <div class="info-note" style="margin-bottom:20px;">
+      ℹ️ <strong>기준 파일: 전체매출현황 파일</strong> 기준으로 산출. 약속처방 순위는 약속매출 컬럼(col13/col92) 기준.
+    </div>
+
+    <div style="margin-bottom:12px; font-family:'Noto Serif KR',serif; font-size:14px; font-weight:600; color:var(--deep); padding-left:4px;">📅 26년 (1~3월)</div>
+    <div class="rank-grid" style="margin-bottom:28px;">
+      <div class="rank-card">
+        <div class="year-badge">26년 (1~3월)</div>
+        <div class="category">전체 처방 매출 순위</div>
+        <div class="rank-big"><em>27</em>위</div>
+        <div class="total-members">전체 4,267명 중</div>
+        <div class="percentile">상위 0.63%</div>
+      </div>
+      <div class="rank-card">
+        <div class="year-badge">26년 (1~3월)</div>
+        <div class="category">탕전 매출 순위</div>
+        <div class="rank-big"><em>12</em>위</div>
+        <div class="total-members">탕전 있는 1,406명 중</div>
+        <div class="percentile">상위 0.85%</div>
+      </div>
+      <div class="rank-card">
+        <div class="year-badge">26년 (1~3월)</div>
+        <div class="category">비급여(일반) 탕전 순위</div>
+        <div class="rank-big"><em>11</em>위</div>
+        <div class="total-members">비급여(일반) 있는 1,339명 중</div>
+        <div class="percentile">상위 0.82%</div>
+      </div>
+      <div class="rank-card">
+        <div class="year-badge">26년 (1~3월)</div>
+        <div class="category">약속처방 매출 순위</div>
+        <div class="rank-big"><em>1,338</em>위</div>
+        <div class="total-members">약속 있는 3,902명 중</div>
+        <div class="percentile">상위 34.3%</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:12px; font-family:'Noto Serif KR',serif; font-size:14px; font-weight:600; color:var(--deep); padding-left:4px;">📅 25년 (전체)</div>
+    <div class="rank-grid">
+      <div class="rank-card">
+        <div class="year-badge">25년 (전체)</div>
+        <div class="category">전체 처방 매출 순위</div>
+        <div class="rank-big"><em>22</em>위</div>
+        <div class="total-members">전체 5,314명 중</div>
+        <div class="percentile">상위 0.41%</div>
+      </div>
+      <div class="rank-card">
+        <div class="year-badge">25년 (전체)</div>
+        <div class="category">탕전 매출 순위</div>
+        <div class="rank-big"><em>12</em>위</div>
+        <div class="total-members">탕전 있는 1,899명 중</div>
+        <div class="percentile">상위 0.63%</div>
+      </div>
+      <div class="rank-card">
+        <div class="year-badge">25년 (전체)</div>
+        <div class="category">비급여(일반) 탕전 순위</div>
+        <div class="rank-big"><em>11</em>위</div>
+        <div class="total-members">비급여(일반) 있는 1,843명 중</div>
+        <div class="percentile">상위 0.60%</div>
+      </div>
+      <div class="rank-card">
+        <div class="year-badge">25년 (전체)</div>
+        <div class="category">약속처방 매출 순위</div>
+        <div class="rank-big"><em>1,120</em>위</div>
+        <div class="total-members">약속 있는 4,980명 중</div>
+        <div class="percentile">상위 22.5%</div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- SECTION 4-1: 구간별 매출 분포 및 순위 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4-1</div>
+      <div>
+        <div class="section-title">구간별 월평균 매출 분포 및 순위</div>
+        <div class="section-sub">탕전전체 · 비급여(일반) · 약속처방 · 총처방 | 월평균 기준 | 26년 1~3월 / 25년 연간 | ★ 원장님 해당 구간 표시</div>
+      </div>
+    </div>
+    <div style="padding: 0 0;">
+<div class="legend-bar">
+  <div class="legend-item"><div class="legend-dot" style="background:var(--col26)"></div> 26년</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--col25)"></div> 25년</div>
+  <div class="legend-item"><span class="legend-star">★</span> 211724 원장님 위치 (구간 내 순위)</div>
+</div>
+
+<div class="tab-wrap">
+  <button class="tab-btn active" onclick="showTab('all')">전체 보기</button>
+  <button class="tab-btn" onclick="showTab('tang')">탕전전체 매출</button>
+  <button class="tab-btn" onclick="showTab('nongap')">비급여(일반) 매출</button>
+  <button class="tab-btn" onclick="showTab('yakso')">약속처방 매출</button>
+  <button class="tab-btn" onclick="showTab('total')">총처방금액</button>
+</div>
+
+<!-- 전체 보기 -->
+<div id="view-all" class="all-charts-view visible">
+  <div class="year-section">
+    <div class="year-section-title">📅 2026년 (1~3월 누적)</div>
+    <div class="four-grid">
+      <div class="chart-panel visible">
+        <div class="panel-title">탕전전체 매출</div>
+        <div class="panel-sub">매출 있는 1,406명 | 211724: <strong>1천만원 이상 구간 12위</strong></div>
+        <div class="chart-wrap"><canvas id="all-tang26"></canvas></div>
+      </div>
+      <div class="chart-panel visible">
+        <div class="panel-title">비급여(일반) 매출</div>
+        <div class="panel-sub">매출 있는 1,339명 | 211724: <strong>1천만원 이상 구간 11위</strong></div>
+        <div class="chart-wrap"><canvas id="all-nongap26"></canvas></div>
+      </div>
+      <div class="chart-panel visible">
+        <div class="panel-title">약속처방 매출</div>
+        <div class="panel-sub">매출 있는 3,857명 | 211724: <strong>50만원 미만 구간 590위</strong></div>
+        <div class="chart-wrap"><canvas id="all-yakso26"></canvas></div>
+      </div>
+      <div class="chart-panel visible">
+        <div class="panel-title">총처방금액</div>
+        <div class="panel-sub">매출 있는 4,215명 | 211724: <strong>1천만원 이상 구간 27위</strong></div>
+        <div class="chart-wrap"><canvas id="all-total26"></canvas></div>
+      </div>
+    </div>
+  </div>
+  <div class="year-section">
+    <div class="year-section-title">📅 2025년 (전체 연간)</div>
+    <div class="four-grid">
+      <div class="chart-panel visible">
+        <div class="panel-title">탕전전체 매출</div>
+        <div class="panel-sub">매출 있는 1,899명 | 211724: <strong>1천만원 이상 구간 12위</strong></div>
+        <div class="chart-wrap"><canvas id="all-tang25"></canvas></div>
+      </div>
+      <div class="chart-panel visible">
+        <div class="panel-title">비급여(일반) 매출</div>
+        <div class="panel-sub">매출 있는 1,843명 | 211724: <strong>1천만원 이상 구간 11위</strong></div>
+        <div class="chart-wrap"><canvas id="all-nongap25"></canvas></div>
+      </div>
+      <div class="chart-panel visible">
+        <div class="panel-title">약속처방 매출</div>
+        <div class="panel-sub">매출 있는 4,980명 | 211724: <strong>50만원 미만 구간 406위</strong></div>
+        <div class="chart-wrap"><canvas id="all-yakso25"></canvas></div>
+      </div>
+      <div class="chart-panel visible">
+        <div class="panel-title">총처방금액</div>
+        <div class="panel-sub">매출 있는 5,314명 | 211724: <strong>1천만원 이상 구간 22위</strong></div>
+        <div class="chart-wrap"><canvas id="all-total25"></canvas></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 탕전전체 -->
+<div id="view-tang" class="charts-grid">
+  <div class="chart-panel">
+    <div class="panel-year">2026년 (1~3월)</div>
+    <div class="panel-title">탕전전체 월평균 매출 구간별 분포</div>
+    <div class="panel-sub">매출 있는 회원 1,406명 기준</div>
+    <div class="chart-wrap"><canvas id="tang26"></canvas></div>
+    <div class="rank-summary">
+      💰 211724 원장님 탕전전체 월평균: <strong>10,713,706원</strong><br>
+      ★ 해당 구간: <strong>1천만원 이상</strong> (15명) → 구간 내 <strong>12위 / 15명</strong><br>
+      전체 순위: <strong>12위 / 1,406명</strong> (상위 0.85%)
+    </div>
+  </div>
+  <div class="chart-panel">
+    <div class="panel-year">2025년 (전체)</div>
+    <div class="panel-title">탕전전체 월평균 매출 구간별 분포</div>
+    <div class="panel-sub">매출 있는 회원 1,899명 기준</div>
+    <div class="chart-wrap"><canvas id="tang25"></canvas></div>
+    <div class="rank-summary">
+      💰 211724 원장님 탕전전체 월평균: <strong>11,744,838원</strong><br>
+      ★ 해당 구간: <strong>1천만원 이상</strong> (17명) → 구간 내 <strong>12위 / 17명</strong><br>
+      전체 순위: <strong>12위 / 1,899명</strong> (상위 0.63%)
+    </div>
+  </div>
+</div>
+
+<!-- 비급여일반 -->
+<div id="view-nongap" class="charts-grid">
+  <div class="chart-panel">
+    <div class="panel-year">2026년 (1~3월)</div>
+    <div class="panel-title">비급여(일반) 월평균 매출 구간별 분포</div>
+    <div class="panel-sub">매출 있는 회원 1,339명 기준</div>
+    <div class="chart-wrap"><canvas id="nongap26"></canvas></div>
+    <div class="rank-summary">
+      💰 211724 원장님 비급여(일반) 월평균: <strong>10,713,706원</strong><br>
+      ★ 해당 구간: <strong>1천만원 이상</strong> (14명) → 구간 내 <strong>11위 / 14명</strong><br>
+      전체 순위: <strong>11위 / 1,339명</strong> (상위 0.82%)
+    </div>
+  </div>
+  <div class="chart-panel">
+    <div class="panel-year">2025년 (전체)</div>
+    <div class="panel-title">비급여(일반) 월평균 매출 구간별 분포</div>
+    <div class="panel-sub">매출 있는 회원 1,843명 기준</div>
+    <div class="chart-wrap"><canvas id="nongap25"></canvas></div>
+    <div class="rank-summary">
+      💰 211724 원장님 비급여(일반) 월평균: <strong>11,744,838원</strong><br>
+      ★ 해당 구간: <strong>1천만원 이상</strong> (15명) → 구간 내 <strong>11위 / 15명</strong><br>
+      전체 순위: <strong>11위 / 1,843명</strong> (상위 0.60%)
+    </div>
+  </div>
+</div>
+
+<!-- 약속처방 -->
+<div id="view-yakso" class="charts-grid">
+  <div class="chart-panel">
+    <div class="panel-year">2026년 (1~3월)</div>
+    <div class="panel-title">약속처방 월평균 매출 구간별 분포</div>
+    <div class="panel-sub">매출 있는 회원 3,857명 기준</div>
+    <div class="chart-wrap"><canvas id="yakso26"></canvas></div>
+    <div class="rank-summary">
+      💰 211724 원장님 약속처방 월평균: <strong>265,800원</strong><br>
+      ★ 해당 구간: <strong>50만원 미만</strong> (3,116명) → 구간 내 <strong>590위 / 3,116명</strong><br>
+      전체 순위: <strong>1,331위 / 3,857명</strong> (상위 34.5%)
+    </div>
+  </div>
+  <div class="chart-panel">
+    <div class="panel-year">2025년 (전체)</div>
+    <div class="panel-title">약속처방 월평균 매출 구간별 분포</div>
+    <div class="panel-sub">매출 있는 회원 4,980명 기준</div>
+    <div class="chart-wrap"><canvas id="yakso25"></canvas></div>
+    <div class="rank-summary">
+      💰 211724 원장님 약속처방 월평균: <strong>331,667원</strong><br>
+      ★ 해당 구간: <strong>50만원 미만</strong> (4,267명) → 구간 내 <strong>406위 / 4,267명</strong><br>
+      전체 순위: <strong>1,119위 / 4,980명</strong> (상위 22.5%)
+    </div>
+  </div>
+</div>
+
+<!-- 총처방 -->
+<div id="view-total" class="charts-grid">
+  <div class="chart-panel">
+    <div class="panel-year">2026년 (1~3월)</div>
+    <div class="panel-title">총처방 월평균 금액 구간별 분포</div>
+    <div class="panel-sub">매출 있는 회원 4,215명 기준</div>
+    <div class="chart-wrap"><canvas id="total26"></canvas></div>
+    <div class="rank-summary">
+      💰 211724 원장님 총처방 월평균: <strong>10,979,506원</strong><br>
+      ★ 해당 구간: <strong>1천만원 이상</strong> (29명) → 구간 내 <strong>27위 / 29명</strong><br>
+      전체 순위: <strong>27위 / 4,215명</strong> (상위 0.64%)
+    </div>
+  </div>
+  <div class="chart-panel">
+    <div class="panel-year">2025년 (전체)</div>
+    <div class="panel-title">총처방 월평균 금액 구간별 분포</div>
+    <div class="panel-sub">매출 있는 회원 5,314명 기준</div>
+    <div class="chart-wrap"><canvas id="total25"></canvas></div>
+    <div class="rank-summary">
+      💰 211724 원장님 총처방 월평균: <strong>12,439,155원</strong><br>
+      ★ 해당 구간: <strong>1천만원 이상</strong> (31명) → 구간 내 <strong>22위 / 31명</strong><br>
+      전체 순위: <strong>22위 / 5,314명</strong> (상위 0.41%)
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- SECTION 5: 약속처방 품목 분석 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">05</div>
+      <div>
+        <div class="section-title">약속처방 품목별 매출 분석</div>
+        <div class="section-sub">약속처방(비탕전) 품목별 매출 분석 | 25년 기준 | 파일: 통합_문서1.xlsx</div>
+      </div>
+    </div>
+
+    <div class="chart-grid-2">
+      <div class="chart-box">
+        <div class="chart-title">25년 약속처방 품목별 매출 (금액 기준)</div>
+        <div class="chart-desc">총 약속처방 3,980,000원 품목별 구성</div>
+        <div class="chart-wrap tall">
+          <canvas id="yaksoItemChart25"></canvas>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">24년 vs 25년 약속처방 비교</div>
+        <div class="chart-desc">연도별 주요 품목 금액 비교</div>
+        <div class="chart-wrap tall">
+          <canvas id="yaksoCompareChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto; margin-top:8px;">
+      <table class="cs-issue-table">
+        <thead>
+          <tr>
+            <th>순위</th>
+            <th>품목</th>
+            <th>수량</th>
+            <th>25년 금액</th>
+            <th>24년 금액</th>
+            <th>비중 (25년)</th>
+            <th>특징</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1</strong></td>
+            <td>사향공진단</td>
+            <td>10개</td>
+            <td>2,974,000원</td>
+            <td>1,788,000원</td>
+            <td>74.7%</td>
+            <td><span class="tag tag-gold">핵심 / 성장</span></td>
+          </tr>
+          <tr>
+            <td><strong>2</strong></td>
+            <td>자운고</td>
+            <td>30개</td>
+            <td>750,000원</td>
+            <td>-</td>
+            <td>18.8%</td>
+            <td><span class="tag tag-green">신규 추가</span></td>
+          </tr>
+          <tr>
+            <td><strong>3</strong></td>
+            <td>경옥고스틱B</td>
+            <td>2개</td>
+            <td>256,000원</td>
+            <td>-</td>
+            <td>6.4%</td>
+            <td><span class="tag tag-blue">소량</span></td>
+          </tr>
+          <tr>
+            <td>-</td>
+            <td>배송비-제제처방 / 배송비-약속처방</td>
+            <td>-</td>
+            <td colspan="2">별도 (금액 미집계)</td>
+            <td>-</td>
+            <td><span class="tag tag-muted">배송비</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="analysis-box">
+      <h4>💊 약속처방 포트폴리오 분석</h4>
+      <ul>
+        <li><strong>사향공진단 74.7% 집중:</strong> 25년 기준 약속처방의 핵심 품목 — 24년(1,788,000원) 대비 25년(2,974,000원)으로 <strong>+66% 성장</strong>, 프리미엄 보약 수요 확인</li>
+        <li><strong>자운고 신규 진입 (750,000원):</strong> 24년에는 없던 품목으로 25년 신규 처방 — 피부·외용 케어 환자군 존재, CS 영문증명서에서 확인된 자운고 처방 패턴과 일치</li>
+        <li><strong>경옥고스틱B 소량 (256,000원):</strong> 2개 처방으로 소규모이나 경옥고 라인업 활용 시작 — 향후 정기 처방 확대 여지 있음</li>
+        <li><strong>약속처방 총 3,980,000원:</strong> 탕전 기반 한의원 특성상 약속처방 비중이 낮으나, 사향공진단 성장세 고려 시 프리미엄 품목 확대 가능성 높음</li>
+        <li><strong>추가 제안 포인트:</strong> 경옥고(스틱 외 환/일반), 감비환 등 아직 미활용 품목 다수 — 방문 시 제안 기회</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 6: 온라인 홍보 / 언론 / 트렌드 / 응대 전략 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">06</div>
+      <div>
+        <div class="section-title">박황진 원장 온라인 홍보 · 언론 현황 및 업계 트렌드</div>
+        <div class="section-sub">자윤한의원 서초점 홍보 현황 + 원외탕전실 방문 응대 전략</div>
+      </div>
+    </div>
+
+    <div class="chart-grid-2">
+      <div class="chart-box">
+        <div class="chart-title">🌐 온라인 홍보 활동 현황</div>
+        <div class="chart-desc">자윤한의원 서초점 주요 온라인 채널</div>
+        <ul class="strategy-list" style="margin-top:8px;">
+          <li><strong>공식 홈페이지</strong> — 자윤한의원 체인 사이트 내 서초점 페이지 운영<br><small style="color:var(--muted)">http://i-jayoon.co.kr/etc/etc_3_view.asp?idx=33</small></li>
+          <li><strong>자윤 브랜드 정체성</strong> — "여성 건강 전문" 한의원 네트워크 (전국 14개 지점)</li>
+          <li><strong>인스타그램 공식계정</strong> — <span style="font-family:monospace;background:#f5f5f5;padding:1px 5px;border-radius:4px;">@jayoon_clinic</span> 운영 확인 (여성질환·난임·산후 중심 콘텐츠)</li>
+          <li><strong>네이버 공식 블로그</strong> — <span style="font-family:monospace;background:#f5f5f5;padding:1px 5px;border-radius:4px;">blog.naver.com/jayoon_clinic</span> — 의료진 칼럼·치료 후기 중심</li>
+          <li><strong>유튜브 공식채널</strong> — 자윤한의원 채널 운영 (<span style="font-family:monospace;background:#f5f5f5;padding:1px 5px;border-radius:4px;">youtube.com/channel/UCyea-D4OBYxkIqqs6LOxvhw</span>)</li>
+          <li><strong>카카오톡 채널</strong> — 서초점 전용 채널 (<span style="font-family:monospace;background:#f5f5f5;padding:1px 5px;border-radius:4px;">pf.kakao.com/_zzGyK</span>) 운영 중</li>
+          <li><strong>네이버 예약</strong> — 서초점 포함 전 지점 네이버 예약 연동 (플레이스 상위 노출 핵심)</li>
+          <li><strong>해외 환자 대응</strong> — 영문 처방증명서 발급 역량 보유 (프랑스/미국 발송 기록)</li>
+        </ul>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">📰 언론 보도 및 미디어 현황</div>
+        <div class="chart-desc">박황진 원장 언론 활동 (지식 기반 추정)</div>
+        <ul class="strategy-list" style="margin-top:8px;">
+          <li><strong>자윤 브랜드 공동 홍보</strong> — 자윤한의원 체인의 기사 출연 가능성 (여성 건강, 갱년기 관련)</li>
+          <li><strong>주요 진료 분야</strong> — 소시호탕 계열 (면역·갱년기·산후), 시호가용골모려탕 (신경증·불면) 전문성</li>
+          <li><strong>유튜브/헬스 매체</strong> — 자윤 계열 유튜브 채널 통한 정보 콘텐츠 참여 가능성</li>
+          <li><strong>한의약 건강 칼럼</strong> — 지역 생활 매체(서초·강남 지역 신문) 기고 가능성</li>
+          <li><strong>특이사항</strong> — 노인 요양원(매주 목/일 휴진 정기 방문 추정), 영문 진료 역량으로 외국인 커뮤니티 마케팅 가능</li>
+        </ul>
+        <div class="info-note" style="margin-top:12px;">⚠ 지식 기반 최신 언론 정보를 위해 웹 검색 추가 확인 권장</div>
+      </div>
+    </div>
+
+    <!-- 자윤네트워크 SNS/마케팅 현황 박스 -->
+    <div class="chart-box wide" style="margin-bottom:20px; border:1.5px solid #d4a72c;">
+      <div class="chart-title" style="display:flex;align-items:center;gap:8px;">
+        <span>📱 자윤네트워크 공식 SNS · 마케팅 채널 현황</span>
+        <span style="background:#f5ede0;color:#9a7530;font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;">확인된 공식 채널</span>
+      </div>
+      <div class="chart-desc">i-jayoon.co.kr 공식 홈페이지 기반 수집 — 박황진 원장님은 자윤 네트워크 공통 마케팅 인프라를 함께 활용 중</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:16px;">
+        <div style="background:#fafafa;border-radius:10px;padding:14px;">
+          <div style="font-weight:700;color:#9a7530;margin-bottom:8px;font-size:13px;">📸 인스타그램</div>
+          <div style="font-size:12px;line-height:1.8;color:#444;">
+            <b>계정:</b> @jayoon_clinic<br>
+            <b>콘텐츠 유형:</b> 여성질환·난임·갱년기·산후 건강 정보, 치료 후기, 건강 팁 카드뉴스<br>
+            <b>타깃층:</b> 2030~40대 여성<br>
+            <b>특징:</b> 네트워크 통합 관리 (각 지점 개별 계정 없음, 본사 단일 계정 운영)
+          </div>
+        </div>
+        <div style="background:#fafafa;border-radius:10px;padding:14px;">
+          <div style="font-weight:700;color:#9a7530;margin-bottom:8px;font-size:13px;">▶ 유튜브</div>
+          <div style="font-size:12px;line-height:1.8;color:#444;">
+            <b>채널:</b> 자윤한의원 공식 채널<br>
+            <b>콘텐츠 유형:</b> 의료진 칼럼 영상, 여성 건강 정보, 난임·산후 관련 전문 정보<br>
+            <b>특징:</b> 원장단 집단 전문성 강조 콘텐츠 → 개별 원장 홍보보다 브랜드 신뢰 구축 중심
+          </div>
+        </div>
+        <div style="background:#fafafa;border-radius:10px;padding:14px;">
+          <div style="font-weight:700;color:#9a7530;margin-bottom:8px;font-size:13px;">📝 네이버 블로그·플레이스</div>
+          <div style="font-size:12px;line-height:1.8;color:#444;">
+            <b>블로그:</b> blog.naver.com/jayoon_clinic<br>
+            <b>네이버 예약:</b> 서초점 포함 전 14개 지점 연동<br>
+            <b>주요 키워드:</b> 난임, 생리불순, 갱년기, 산후조리, 다낭성난소증후군<br>
+            <b>특징:</b> 의료진 전문 칼럼 주기적 발행으로 검색 유입 강화
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
+        <div style="background:#fff8ee;border-radius:10px;padding:14px;border-left:4px solid #d4a72c;">
+          <div style="font-weight:700;color:#9a7530;margin-bottom:6px;font-size:12px;">💬 카카오톡 채널 (서초점 전용)</div>
+          <div style="font-size:12px;line-height:1.8;color:#444;">
+            pf.kakao.com/_zzGyK 운영 중<br>
+            환자 상담·예약·공지 채널로 활용<br>
+            <span style="color:#9a7530;font-weight:600;">→ 원장님과의 소통 핵심 창구 — 옥천당 CS 개선 안내 메시지 활용 고려 가능</span>
+          </div>
+        </div>
+        <div style="background:#fff8ee;border-radius:10px;padding:14px;border-left:4px solid #d4a72c;">
+          <div style="font-weight:700;color:#9a7530;margin-bottom:6px;font-size:12px;">🌐 네트워크 마케팅 특징 요약</div>
+          <div style="font-size:12px;line-height:1.8;color:#444;">
+            • 본사 통합 SNS 운영 → 개별 지점 독립 마케팅 역량 제한적<br>
+            • 자윤 브랜드 공동 키워드 ("여성한방", "난임", "갱년기") 집중<br>
+            • 원장님 개인 SNS 활동은 확인되지 않음<br>
+            <span style="color:#9a7530;font-weight:600;">→ 옥천당의 약속처방 PB 제품 지원이 원장님의 개인 전문성 차별화에 유효</span>
+          </div>
+        </div>
+      </div>
+
+    <div class="gold-divider"></div>
+
+    <div class="section-header" style="margin-bottom:20px;">
+      <div style="font-family:'Noto Serif KR',serif;font-size:18px;font-weight:600;color:var(--deep);border-left:4px solid var(--gold);padding-left:16px;">
+        한의업계 트렌드 vs 박황진 원장 관심 처방 비교 분석
+      </div>
+    </div>
+
+    <div class="chart-box wide" style="margin-bottom:24px;">
+      <div class="chart-title">한의업계 주요 트렌드 vs 박황진 원장 처방 포트폴리오 적합도</div>
+      <div class="chart-desc">업계 트렌드 중요도 vs 원장 처방 현황 매핑</div>
+      <div class="chart-wrap short">
+        <canvas id="trendChart"></canvas>
+      </div>
+    </div>
+
+    <div class="strategy-grid">
+      <div class="strategy-card">
+        <h4><div class="icon">🌿</div> 트렌드 ① 여성 건강 전문화</h4>
+        <p>갱년기, 산후조리, 생리 불순 — 한의 여성 클리닉 수요 급증</p>
+        <ul class="strategy-list">
+          <li>소시호탕·시호가용골모려탕 — 갱년기·신경증 핵심 처방 ✅ 완벽 부합</li>
+          <li>영문 처방증명서 (산후풍, 생리통) — 외국인 여성 환자 케어 역량 보유</li>
+          <li>자윤 브랜드 자체가 '여성 건강 전문' 포지셔닝</li>
+        </ul>
+      </div>
+      <div class="strategy-card">
+        <h4><div class="icon">💊</div> 트렌드 ② 녹용·보약 프리미엄화</h4>
+        <p>고급 녹용 처방 수요 증가, 품질 인증 요구 심화</p>
+        <ul class="strategy-list">
+          <li>녹용품질보증서 동봉 요청이 CS의 40% 이상 — 고급 녹용 처방 비중 매우 높음</li>
+          <li>러시아산 녹용 처방도 다수 확인 — 고품질 원산지 다각화</li>
+          <li>경옥고 스틱, 공진단 처방 경험 있음 — 보약 포트폴리오 확장 가능</li>
+        </ul>
+      </div>
+      <div class="strategy-card">
+        <h4><div class="icon">🌍</div> 트렌드 ③ 글로벌 한의 수요</h4>
+        <p>외국인 환자 증가, 한류와 함께 한의 치료 해외 확산</p>
+        <ul class="strategy-list">
+          <li>미국(샌프란시스코), 프랑스(파리) 발송 기록 — 실제 해외 환자 존재</li>
+          <li>영문 처방증명서 발급 역량 (알러지, 피로, 두드러기 등)</li>
+          <li>서초구 위치 — 외국 거주 한국인/외국인 접근성 우수</li>
+        </ul>
+      </div>
+      <div class="strategy-card">
+        <h4><div class="icon">📱</div> 트렌드 ④ 디지털 원외탕전 시스템 활용</h4>
+        <p>스마트 처방 관리, 배송 추적, CS 디지털화</p>
+        <ul class="strategy-list">
+          <li>공동탕전실 시스템 적극 활용 — QNA 게시판 통한 실장-C/S 소통 활성화</li>
+          <li>처방 취소·변경 셀프 처리 시스템 인지 및 활용</li>
+          <li>배치 처방 일정 관리 능숙 — 연휴·휴진 대응 체계화</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gold-divider"></div>
+
+    <!-- 응대 전략 -->
+    <div class="section-header" style="margin-bottom:20px;">
+      <div style="font-family:'Noto Serif KR',serif;font-size:18px;font-weight:600;color:var(--deep);border-left:4px solid var(--gold);padding-left:16px;">
+        🏭 원외탕전실 시설 방문 응대 전략
+      </div>
+    </div>
+
+    <div class="warning-box" style="background:rgba(201,168,76,0.08);border-color:rgba(201,168,76,0.3);border-left-color:var(--gold);">
+      <h5 style="color:#9a7530;">⚡ 방문 전 필수 사전 대응 사항</h5>
+      <p style="margin-bottom:14px;">박황진 원장님은 <strong>탕전 전국 12위 VIP 파트너</strong>입니다. 시설 투어 전 아래 4가지를 미리 준비해 방문 당일 Stop별로 자연스럽게 연결하세요.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div style="background:#fff;border-radius:8px;padding:12px;border-left:3px solid #d4a72c;">
+          <div style="font-weight:700;color:#9a7530;font-size:12px;margin-bottom:6px;">📋 Stop 1 연계 — 원료 관리 구역 준비 사항</div>
+          <ul style="font-size:12px;line-height:1.9;color:#444;margin:0;padding-left:16px;">
+            <li>원장님 CS 40% = 녹용품질보증서 요청 → <b>hGMP 인증 녹용 원산지 서류·사진</b> 지참</li>
+            <li>러시아산 녹용 처방 기록 확인 → 원산지별 품질 차별화 포인트 설명 준비</li>
+            <li>약재 입고~조제까지 추적 시스템 시연 포인트 미리 숙지</li>
+          </ul>
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px;border-left:3px solid #9a7530;">
+          <div style="font-weight:700;color:#9a7530;font-size:12px;margin-bottom:6px;">🫙 Stop 2 연계 — 소시호탕 계열 구역 준비 사항</div>
+          <ul style="font-size:12px;line-height:1.9;color:#444;margin:0;padding-left:16px;">
+            <li>CS 취소 1위 처방 = 소시호탕 → 취소 이유가 <b>복약 편의성</b>인지 <b>처방 변경</b>인지 데이터 확인</li>
+            <li>시호계열 약재 보관 온·습도 관리 기준 현장에서 직접 확인시켜 주기</li>
+            <li>조제 배치 일정(연휴·휴진 대응) 관련 협의 내용 미리 정리</li>
+          </ul>
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px;border-left:3px solid #6b8e6b;">
+          <div style="font-weight:700;color:#9a7530;font-size:12px;margin-bottom:6px;">📦 Stop 3 연계 — 파우치·포장 라인 준비 사항</div>
+          <ul style="font-size:12px;line-height:1.9;color:#444;margin:0;padding-left:16px;">
+            <li>원장님 배송지 지정 CS 다수 → <b>주소 변경·배송일 지정 자동화</b> 시스템 직접 시연 준비</li>
+            <li>파손 방지 포장 개선 내역 자료 지참 (사진/비교 사례)</li>
+            <li>해외(미국·프랑스) 발송 포장 기준 별도 설명 준비 (영문 증명서 동봉 공정 포함)</li>
+          </ul>
+        </div>
+        <div style="background:#fff;border-radius:8px;padding:12px;border-left:3px solid #c17a42;">
+          <div style="font-weight:700;color:#9a7530;font-size:12px;margin-bottom:6px;">🚚 Stop 4 연계 — 배송·CS 시스템 준비 사항</div>
+          <ul style="font-size:12px;line-height:1.9;color:#444;margin:0;padding-left:16px;">
+            <li>CS 전담팀 IQMS 대응 체계 요약 자료 1장 지참 → 원장님 실장님께 직접 전달</li>
+            <li>녹용품질보증서 자동 동봉 설정 가능 여부 + 방법 안내 준비</li>
+            <li>약속처방(사향공진단·자운고) 성장 데이터 제시 → 추가 확대 제안 타이밍</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="strategy-grid">
+      <div class="strategy-card" style="border-top: 3px solid var(--gold);">
+        <h4><div class="icon">🎯</div> Phase 1: VIP 환영 · 관계 강화</h4>
+        <p>방문 첫 10분 — 데이터로 원장님의 위치 먼저 보여주기</p>
+        <ul class="strategy-list">
+          <li><strong>탕전 전국 12위 VIP 감사 인사:</strong> "25년 기준 1,400여 파트너 중 상위 1%이십니다" — 수치로 특별함 전달</li>
+          <li><strong>26년 성장세 공유:</strong> 3월 196건 처방, 월평균 대비 131% 성장 — "함께 성장하고 있다"는 파트너십 메시지</li>
+          <li><strong>5년+ 장기 파트너 강조:</strong> 2021년 3월 가입 이후 꾸준한 신뢰 관계 강조</li>
+          <li><strong>비급여 일반 탕전 11위:</strong> 자유처방 시장에서의 독보적 위치 — "원장님 처방 역량이 보여주는 결과" 프레이밍</li>
+        </ul>
+      </div>
+      <div class="strategy-card" style="border-top: 3px solid var(--deep);">
+        <h4><div class="icon">📊</div> Phase 2: VIP 지위 강조</h4>
+        <p>데이터로 보여주는 박황진 원장의 위치</p>
+        <ul class="strategy-list">
+          <li><strong>탕전 매출 12위 (전국 1,400명+ 중):</strong> "원장님은 저희 탕전 파트너 중 상위 1% 고객이십니다"</li>
+          <li><strong>26년 성장세 제시:</strong> 3월 처방 급증(196건), 26년월평균대비 131% — 성장 파트너로서의 상호 가치 강조</li>
+          <li><strong>5년 이상 장기 파트너십:</strong> 2021년 3월 가입, 성실한 탕전 파트너 관계 강조</li>
+          <li><strong>비급여 일반 탕전 순위 11위:</strong> 자유처방 시장에서의 독보적 위치 강조</li>
+        </ul>
+      </div>
+      <div class="strategy-card" style="border-top: 3px solid var(--green); grid-column: span 2;">
+        <h4><div class="icon">🔬</div> Phase 3: 시설 투어 포인트 — 원장님 주처방 약재 중심 맞춤 시연</h4>
+        <p>CS 데이터 기반 원장님 처방 패턴에 완전히 맞춘 투어 동선 설계 — <strong style="color:var(--gold);">Stop별 준비사항은 위 '방문 전 사전 대응 사항' 참조</strong></p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:12px;">
+          <div>
+            <div style="font-weight:700; color:var(--deep); font-size:13px; margin-bottom:8px; padding-bottom:4px; border-bottom:2px solid var(--gold);">🌿 Stop 1. 원료 한약재 관리 구역 <span style="color:var(--muted); font-size:11px;">(최우선 — CS 40% 녹용 관련 / hGMP 인증 원료 관리 시스템)</span></div>
+            <ul class="strategy-list" style="font-size:12px;">
+              <li><strong>hGMP 인증 원료 입고 검수 시연:</strong> 입고 시 관능검사·클리지표검사·이화학검사 3단계 전수 검사 과정 직접 설명 — "원장님께서 자주 요청하시는 녹용품질보증서는 이 입고 검사 데이터를 기반으로 발급됩니다"</li>
+              <li><strong>SPC 원료한약재관리시스템 소개:</strong> 한약재 품질·제조 이력 정보를 치방지에게 실시간 제공하는 시스템 — hGMP 제조 이력·Lot 이력·자가품질 이력이 모두 연동되어 객관적이고 신뢰할 수 있는 품질 정보 확인 가능</li>
+              <li><strong>전수 샘플링 품질 보관 현황:</strong> 칭량·탕전·포장 단계별 샘플링, 조제 완료 포장에 대한 샘플링 27개월 보관 — TLC 검사를 통한 조제 정확성 검사, 농도·산도·색도 등 물리지표를 통한 동등성 검사</li>
+              <li><strong>녹용 원산지 추적 및 품질보증서 발급 프로세스:</strong> 배치별 보증서 자동 출력 과정 시연 — "원장님 처방에 들어가는 녹용이 어느 산지에서, 어떤 검사를 거쳐 왔는지 이 화면에서 바로 확인하실 수 있습니다"</li>
+              <li><strong>다단계 품질 관리 체계 강조:</strong> 입고~출고까지 자동화된 추적 시스템 시연 — 부설 연구소 즉각 대응 체계, 실시간 모니터링 구조 설명</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-weight:700; color:var(--deep); font-size:13px; margin-bottom:8px; padding-bottom:4px; border-bottom:2px solid var(--accent);">🫙 Stop 2. 시호계열·소시호탕 약재 관리 구역 <span style="color:var(--muted); font-size:11px;">(CS 취소기록 처방명 1위)</span></div>
+            <ul class="strategy-list" style="font-size:12px;">
+              <li><strong>시호가용골모려탕 핵심 약재(시호·용골·모려) 원물 실물 전시:</strong> 실제 약재 직접 보고 만져볼 수 있는 샘플 준비 — 원장님 주처방이라 관심도 높음</li>
+              <li><strong>소시호탕 계열 약재(소시호·황금·반하·인삼·감초·생강·대조) 품질 기준 설명:</strong> 영문증명서 요청이 많은 처방 — 해외 환자용 고품질 약재임을 강조</li>
+              <li><strong>약재 배합 정밀도 관리:</strong> 전자저울 계량 시스템, 처방전 대비 오차율 관리 기준 시연</li>
+              <li><strong>대청룡탕·시호거금가령탕 약재:</strong> 감기 시즌 계절별 약재 재고 관리 체계 소개</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-weight:700; color:var(--deep); font-size:13px; margin-bottom:8px; padding-bottom:4px; border-bottom:2px solid var(--green);">📦 Stop 3. 파우치 제조·포장 라인 <span style="color:var(--muted); font-size:11px;">(SPC 포장공정 시스템 / 파손 이력 개선 포인트 강조)</span></div>
+            <ul class="strategy-list" style="font-size:12px;">
+              <li><strong>SPC 포장공정 시스템 시연:</strong> 시스템에 의한 포장법 임치 검수(한약 상자·파우치·복용법) — 환지명 라벨링, 전공포장까지 전 과정이 SPC 시스템으로 실시간 모니터링됨을 직접 보여드리기</li>
+              <li><strong>CLEAN System 포장 위생 관리:</strong> 옥천당 자체 규격의 CLEAN System(차단 및 밀살균)이 가장 엄격하게 적용되는 충전실에서 위생적으로 포장되는 과정 설명 — "예전에 터짐 문제가 있었던 파우치, 지금은 이 공정으로 개선됐습니다"</li>
+              <li><strong>5 type 마킹공정 확인:</strong> 개별 파우치에 환의원명·환자명·연락처·조제일·자유문구 5가지 정보가 마킹되고, 1차 육안 검수 작업 후 환약 내 이물 함유 및 외부 오염 검수, 팩 수·팩 용량 검수까지 진행됨을 설명</li>
+              <li><strong>파손 재처방 이력 투명 공개:</strong> 2025년 CS에 기록된 파손·재처방 건수를 인정하고, SPC 포장공정 도입 이후 개선된 현황 단계별 설명 — 숨기지 않는 투명성이 신뢰 회복의 핵심</li>
+              <li><strong>포장 전 사진 촬영 시스템:</strong> IQMS 포장 임치 검수 사진 촬영 → 처방 한의사에게 자동 결과 보고서 제공 — 원장님이 IQMS에서 언제든 포장 상태 확인 가능</li>
+            </ul>
+          </div>
+          <div>
+            <div style="font-weight:700; color:var(--deep); font-size:13px; margin-bottom:8px; padding-bottom:4px; border-bottom:2px solid var(--red);">🚚 Stop 4. 배송·CS 관리 시스템 <span style="color:var(--muted); font-size:11px;">(국내+해외 배송 니즈 있음)</span></div>
+            <ul class="strategy-list" style="font-size:12px;">
+              <li><strong>배치 처방 일정 관리 시스템:</strong> 원장님이 휴진(목·일) 기간 활용하는 배치 탕전 스케줄 자동화 — 실제 서초점 배송 일정 현황판 보여드리기</li>
+              <li><strong>국제배송 EMS 프로세스:</strong> 미국·프랑스 발송 경험 기반 — 영문 처방증명서 동봉, 관세 처리, 추적 시스템 시연</li>
+              <li><strong>IQMS 처방 이력 조회 시연:</strong> 원장님이 처방 취소·변경 요청 시 활용하는 셀프 취소 기능 안내 — "원장님이 직접 조제대기 단계에서 취소 가능합니다"</li>
+              <li><strong>CS 전담팀 운영 시스템:</strong> 접수→처리→완료까지 IQMS 내 실시간 이력 관리 — 모든 CS가 날짜·담당자·처리내용과 함께 기록되어 원장님이 언제든 확인 가능한 투명한 처리 체계 운영</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="strategy-card" style="border-top: 3px solid var(--accent); grid-column: span 2;">
+        <h4><div class="icon">💼</div> Phase 4: 비즈니스 제안 — 상권 환경 기반 맞춤 성장 전략</h4>
+        <p>서초 상권 경쟁 분석을 바탕으로 원장님 성장 기회를 극대화하는 제안</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:12px;">
+          <div style="background:var(--warm); padding:14px; border-radius:4px; border-left:3px solid var(--gold);">
+            <div style="font-weight:700; font-size:12px; color:var(--deep); margin-bottom:8px;">🏆 경쟁 우위 강화 제안</div>
+            <ul class="strategy-list" style="font-size:12px;">
+              <li>주변 장덕한방병원(145m) 대비 <strong>여성 전문 차별화</strong> — 소시호·시호가용골모려탕 중심 여성 한약 전문성 더욱 특화</li>
+              <li>누베베 강남점(서초중앙로 130) 다이어트 특화 대비 원장님은 <strong>갱년기·산후·면역 정통 한약</strong> 포지셔닝 — 경쟁 회피</li>
+              <li>해우소한의원(144m) 소화기 특화 대비 원장님은 <strong>심신 케어+녹용 고급화</strong> 전략 유지</li>
+            </ul>
+          </div>
+          <div style="background:rgba(201,168,76,0.08); padding:14px; border-radius:4px; border-left:3px solid var(--red); border: 1.5px solid rgba(201,168,76,0.4);">
+            <div style="font-weight:700; font-size:12px; color:var(--red); margin-bottom:4px;">⭐ NEW — 여성 고급 케어 키 제품 전략</div>
+            <div style="font-size:11px; color:var(--muted); margin-bottom:10px;">CS 데이터 기반 · 원장님 처방 패턴과 정확히 일치하는 제안</div>
+            <ul class="strategy-list" style="font-size:12px;">
+              <li>
+                <strong>① 여성 갱년기 케어 키 제품 — 경옥고 (확대 제안):</strong><br>
+                현재 경옥고스틱B 2개(256,000원) 소량 처방 중 → <strong>경옥고환/경옥고 정기 처방으로 업그레이드</strong><br>
+                <span style="color:var(--muted); font-size:11px;">· 경옥고 = 갱년기 여성 피로·수족냉증·피부노화 효능 — 원장님 주처방(시호가용골모려탕) 갱년기 환자와 완벽히 매칭<br>· 왕실 3대 명약(공진단·경옥고·우황청심환) 중 여성 친화도 최고 — 고급 브랜드 이미지 구축에 최적</span>
+              </li>
+              <li>
+                <strong>② 사향공진단 시그니처 라인 (정기 패키지화):</strong><br>
+                24년 1,338,000원 → 25년 2,974,000원 <strong>+66% 자연 성장 중</strong> → 월정기 처방 패키지로 공식화<br>
+                <span style="color:var(--muted); font-size:11px;">· 사향공진단(녹용+사향+당귀+산수유) = 원장님이 이미 가장 많이 쓰는 녹용 베이스 고급 제품과 시너지<br>· "서초 법조타운 고소득 여성 전용 시그니처 보약" 컨셉으로 차별화 포지셔닝 가능</span>
+              </li>
+              <li>
+                <strong>③ 산후 회복 전문 번들 (신규 제안):</strong><br>
+                영문증명서 산후풍 5건 + 자운고 30개 신규 처방 → <strong>산후 케어 수요 확인</strong> → 3종 번들화<br>
+                <span style="color:var(--muted); font-size:11px;">· 자운고(피부 회복) + 소시호탕(산후풍·면역) + 경옥고(기력 회복) 3종 세트<br>· 해외 거주 한인 산모 타깃 — 영문증명서 수요와 연계한 차별화 서비스</span>
+              </li>
+            </ul>
+          </div>
+          <div style="background:var(--warm); padding:14px; border-radius:4px; border-left:3px solid var(--green);">
+            <div style="font-weight:700; font-size:12px; color:var(--deep); margin-bottom:8px;">📈 약속처방 포트폴리오 확대</div>
+            <ul class="strategy-list" style="font-size:12px;">
+              <li><strong>사향공진단 정기 처방화:</strong> 현재 연간 10개 → 월 1~2개 정기 패키지 전환 제안 — 예측 가능한 매출 기반 구축</li>
+              <li><strong>경옥고 라인업 확대:</strong> 경옥고스틱B → 경옥고환·경옥고 병제 추가 — 갱년기·피로 환자 정기 보약으로 확장</li>
+              <li><strong>감비환 처방 추가:</strong> 자윤 브랜드 여성 다이어트 처방 — 누베베 고객층 흡수 경쟁 무기</li>
+            </ul>
+          </div>
+          <div style="background:var(--warm); padding:14px; border-radius:4px; border-left:3px solid var(--accent);">
+            <div style="font-weight:700; font-size:12px; color:var(--deep); margin-bottom:8px;">🌍 글로벌 서비스 패키지화</div>
+            <ul class="strategy-list" style="font-size:12px;">
+              <li><strong>영문 처방증명서 표준화 서비스:</strong> 소시호(생리통·산후풍·불면 등) 영문 템플릿 20종 이상 준비 — 원장님이 가장 많이 요청하는 패턴 자동화</li>
+              <li><strong>EMS 해외배송 정기 패키지:</strong> 미국·프랑스·해외 발송 고정 비용 패키지화 — 환자 편의성 향상</li>
+              <li><strong>배치 탕전 휴진 연계 협약:</strong> 매주 목·일 휴진 기간 자동 배치 탕전 스케줄링 서비스</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gold-divider"></div>
+
+    <!-- 상권 분석 섹션 -->
+    <div style="margin-bottom:20px; font-family:'Noto Serif KR',serif; font-size:18px; font-weight:600; color:var(--deep); border-left:4px solid var(--gold); padding-left:16px;">
+      🗺️ 자윤한의원 서초점 주변 상권 분석
+    </div>
+
+    <div class="analysis-box" style="margin-bottom:24px;">
+      <h4>📍 반경 200m 내 한의원 경쟁 현황 (모두닥·굿닥 기준)</h4>
+      <ul>
+        <li><strong>전태공한의원 (77m):</strong> 서초1동 인근, 리뷰 4건 — 소규모 일반 한의원, 직접 경쟁 강도 낮음</li>
+        <li><strong>해우소한의원 (144m):</strong> 리뷰 14건·평점 8.8 — 해독·소화기(역류성식도염·과민성대장) 특화, 치료 분야 차별화됨</li>
+        <li><strong>장덕한방병원 (145m):</strong> 서초중앙로 42 블루핀타워, 의사·한의사 40명 협진 대형병원 — 어깨·무릎·척추·피부성형 특화, 치료 분야 다름</li>
+        <li><strong>태을한의원 (164m):</strong> 리뷰 없음 — 존재감 미약</li>
+        <li><strong>누베베한의원 강남점 (~600m):</strong> 서초중앙로 130 교대역, 리뷰 37건 — 다이어트 특화, 원장님과 고객층 겹침 주의 필요</li>
+      </ul>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;">
+      <div class="chart-box">
+        <div class="chart-title">🏥 주요 경쟁 한의원 비교</div>
+        <div class="chart-desc">서초점 반경 700m 내 주요 경쟁 기관</div>
+        <div style="overflow-x:auto; margin-top:8px;">
+          <table class="cs-issue-table" style="font-size:12px;">
+            <thead>
+              <tr><th>한의원명</th><th>거리</th><th>특화 분야</th><th>규모</th><th>경쟁 강도</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>자윤한의원 서초점</strong></td><td>기준</td><td>여성건강·갱년기·산후·면역</td><td>소형(원장1인)</td><td>—</td></tr>
+              <tr><td>전태공한의원</td><td>77m</td><td>일반진료</td><td>소형</td><td><span class="tag tag-green">낮음</span></td></tr>
+              <tr><td>해우소한의원</td><td>144m</td><td>해독·소화기 전문</td><td>소형</td><td><span class="tag tag-green">낮음(분야 다름)</span></td></tr>
+              <tr><td>장덕한방병원</td><td>145m</td><td>근골격계·피부성형 협진</td><td>대형(40명)</td><td><span class="tag tag-green">낮음(분야 다름)</span></td></tr>
+              <tr><td>누베베한의원 강남</td><td>~600m</td><td>다이어트 전문</td><td>중형(체인)</td><td><span class="tag tag-gold">중간(여성고객층)</span></td></tr>
+              <tr><td>닥터제이한의원</td><td>인근</td><td>일반</td><td>소형</td><td><span class="tag tag-green">낮음</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">🏘️ 서초 상권 특성 분석</div>
+        <div class="chart-desc">자윤 서초점 입지 환경</div>
+        <ul class="strategy-list" style="margin-top:12px; font-size:12px;">
+          <li><strong>래미안서초유니빌 내 입점:</strong> 고소득 아파트 단지 내 한의원 — 주민 충성도 높고 재방문율 유리</li>
+          <li><strong>남부터미널역 3호선 90m:</strong> 접근성 우수 — 서초·강남·방배·동작구 광역 환자 유입 가능</li>
+          <li><strong>법조타운(서초동) 인근:</strong> 고소득 직장인 밀집 — 스트레스성 질환(시호가용골모려탕) 수요 높음</li>
+          <li><strong>서울중앙지방법원·검찰청 인근:</strong> 고소득 전문직 여성 비중 높음 — 산후·갱년기 처방 수요 우수</li>
+          <li><strong>외국계 기업·주거지 인접:</strong> 영문 처방증명서 수요 지속 발생 — 해외 거주 한인 환자 유입 채널</li>
+          <li><strong>래미안 브랜드 상가 이점:</strong> 단지 내 위치로 광고 없이도 주민 자연 유입 — 맘카페 구전 마케팅 효과 큼</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gold-divider"></div>
+
+    <!-- 온라인 후기 섹션 -->
+    <div style="margin-bottom:20px; font-family:'Noto Serif KR',serif; font-size:18px; font-weight:600; color:var(--deep); border-left:4px solid var(--gold); padding-left:16px;">
+      ⭐ 네이버 플레이스 · 온라인 후기 현황
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;">
+      <div class="chart-box">
+        <div class="chart-title">캐시닥 후기 요약 (총 49건·평점 4.7/5.0)</div>
+        <div class="chart-desc">방문 인증 후기 기반 — 5점 48건(98%), 4점 이하 0건</div>
+        <div style="margin-top:12px;">
+          <div style="background:rgba(26,107,74,0.08); border-left:3px solid var(--green); padding:10px 14px; border-radius:3px; margin-bottom:8px; font-size:12px;">
+            <strong>"친절하고 깨끗한 병원이에요 여기 추천합니다"</strong> — 곽진* (2026.04.05)
+          </div>
+          <div style="background:rgba(26,107,74,0.08); border-left:3px solid var(--green); padding:10px 14px; border-radius:3px; margin-bottom:8px; font-size:12px;">
+            <strong>"원장님 친절하게 잘 설명해주시고 믿음이 가요. 직원분들도 밝게 대해주셔서 힐링하고 갑니다. 재방문 할 거에요~"</strong> — 박인* (2025.04.23)
+          </div>
+          <div style="background:rgba(26,107,74,0.08); border-left:3px solid var(--green); padding:10px 14px; border-radius:3px; margin-bottom:8px; font-size:12px;">
+            <strong>"발목삐고 감기때문에 2주정도 다녔는데 감기는 이틀만에 좋아지고 발목도 일주일만에 확실히 느낄정도로 좋아졌어요"</strong> — 안*희 (2025.07.27)
+          </div>
+          <div style="background:rgba(26,107,74,0.08); border-left:3px solid var(--green); padding:10px 14px; border-radius:3px; margin-bottom:8px; font-size:12px;">
+            <strong>"원장님과 간호사님들이 너무 친절해서 좋았습니다."</strong> — 최미* (2026.03.04)
+          </div>
+          <div style="background:rgba(26,107,74,0.08); border-left:3px solid var(--green); padding:10px 14px; border-radius:3px; font-size:12px;">
+            <strong>"지인소개로 방문하여 진료 잘 받고 왔습니다 감사합니다"</strong> — 익명 (2026.01.28)
+          </div>
+        </div>
+        <div class="info-note" style="margin-top:12px;">
+          📊 <strong>후기 분석:</strong> ① 원장님 친절도·신뢰감 언급이 압도적 ② 직원(실장) 친절도 동반 언급 ③ 치료 효과(감기·근골격) 단기 효과 언급 ④ 지인 소개 루트 존재 → <strong>구전 기반 유입 강함</strong>
+        </div>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">온라인 채널 현황 및 활용도</div>
+        <div class="chart-desc">검색 기반 자윤 서초점 노출 현황</div>
+        <ul class="strategy-list" style="margin-top:12px; font-size:12px;">
+          <li><strong>모두닥:</strong> 리뷰 5건 — 향후 적극 관리 필요 (경쟁사 해우소 14건 대비 낮음)</li>
+          <li><strong>캐시닥:</strong> ⭐4.7 / 49건 — 강남권 한의원 중 우수한 평점, 방문 인증 기반</li>
+          <li><strong>카카오톡채널 운영 중:</strong> pf.kakao.com/_zzGyK — 서초 자윤한의원 공식 채널</li>
+          <li><strong>자윤 본사 홈페이지 등재:</strong> i-jayoon.co.kr — 체인 공식 정보 노출</li>
+          <li><strong>네이버 플레이스:</strong> 남부터미널역 90m 위치 노출 — 지역 검색 시 상위 노출 중</li>
+          <li><strong>맘카페 노출 추정:</strong> 래미안서초유니빌 입주민 카페 + 서초·강남 맘카페 구전 루트 활성화 — 지인소개 비율이 높은 것이 증거</li>
+        </ul>
+        <div class="info-note" style="margin-top:12px;">
+          💡 <strong>응대 활용 포인트:</strong> "원장님 캐시닥 평점 4.7점, 지인 소개 후기가 많다는 건 충성 환자층이 탄탄하다는 뜻입니다. 저희 탕전 품질이 그 신뢰의 기반이 되고 싶습니다."
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis-box" style="margin-top:0;">
+      <h4>🤝 응대 핵심 메시지 — "박황진 원장님은 저희의 VIP 파트너입니다"</h4>
+      <ul>
+        <li><strong>시설 투어 = 신뢰 구축 기회:</strong> Stop별 시연을 통해 품질 관리 체계를 자연스럽게 보여주는 것이 가장 강력한 신뢰 메시지</li>
+        <li><strong>상권 데이터 활용:</strong> "서초 주변에 장덕·해우소·누베베 등이 있지만 원장님 고객층은 다릅니다. 갱년기·산후 여성 전문이라는 포지션을 저희가 뒷받침하겠습니다"</li>
+        <li><strong>후기 데이터 활용:</strong> "캐시닥 4.7점, 49건 후기 — 지인 소개 비율이 높은 한의원은 원외탕전 품질이 경쟁력의 핵심입니다"</li>
+        <li><strong>탕전 VIP 순위 공유:</strong> "전국 1,400개 탕전 한의원 중 월평균 탕전 12위, 비급여일반 11위입니다" — 인쇄물로 첫인상에 제공</li>
+        <li><strong>녹용 전문가 동행:</strong> 원장님 처방의 40%+ 녹용 포함 — 녹용 담당 한약사 또는 품질팀장 반드시 동행</li>
+        <li><strong>26년 3월 성장세 강조:</strong> "3월 처방건수 196건, 전년 동월 대비 +38% 성장하고 계십니다 — 저희도 함께 성장하고 싶습니다"</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>자윤한의원 서초점 · 박황진 원장 | 회원사 Key: 211724 | 분석 기준: 2025년 전체 + 2026년 3월까지</p>
+  <p>본 보고서는 내부 참고용 기밀 자료입니다 · 외부 유출 금지</p>
+</div>
+
+<script>
+const GOLD = '#c9a84c';
+const DEEP = '#16213e';
+const GREEN = '#1a6b4a';
+const RED = '#c0392b';
+const BLUE = '#0f3460';
+const MUTED = '#7a7068';
+
+Chart.defaults.font.family = "'Noto Sans KR', sans-serif";
+Chart.defaults.color = '#7a7068';
+
+// 1. 월별 탕전 금액 추이
+const monthlyCtx = document.getElementById('monthlyChart').getContext('2d');
+new Chart(monthlyCtx, {
+  type: 'line',
+  data: {
+    labels: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    datasets: [{
+      label: '25년',
+      data: [11295225,10433828,10955912,11971831,12196046,12665109,14175503,10789660,15357402,9039268,10658337,11399937],
+      borderColor: BLUE, backgroundColor: 'rgba(15,52,96,0.08)',
+      borderWidth: 2, fill: true, tension: 0.4, pointRadius: 5,
+      datalabels: { display: true }
+    },{
+      label: '26년',
+      data: [9780332,9594212,12766574,null,null,null,null,null,null,null,null,null],
+      borderColor: GOLD, backgroundColor: 'rgba(201,168,76,0.1)',
+      borderWidth: 2.5, fill: true, tension: 0.4, pointRadius: 6
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top' },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + (ctx.raw/10000).toFixed(1) + '만원' } }
+    },
+    scales: {
+      y: { ticks: { callback: v => (v/10000).toFixed(0)+'만' }, grid: { color: 'rgba(0,0,0,0.05)' } },
+      x: { grid: { display: false } }
+    }
+  },
+  plugins: [{
+    id: 'lineLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      chart.data.datasets.forEach((ds, di) => {
+        const meta = chart.getDatasetMeta(di);
+        meta.data.forEach((pt, i) => {
+          const val = ds.data[i];
+          if (val == null) return;
+          ctx.save();
+          ctx.fillStyle = di === 0 ? BLUE : GOLD;
+          ctx.font = 'bold 10px Noto Sans KR';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'bottom';
+          ctx.fillText((val/10000).toFixed(0)+'만', pt.x, pt.y - 6);
+          ctx.restore();
+        });
+      });
+    }
+  }]
+});
+
+// 2. 월별 건수 (수치 표시)
+const monthlyCountCtx = document.getElementById('monthlyCountChart').getContext('2d');
+new Chart(monthlyCountCtx, {
+  type: 'bar',
+  data: {
+    labels: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    datasets: [{
+      label: '25년',
+      data: [142,130,142,161,161,165,176,144,187,132,164,157],
+      backgroundColor: 'rgba(15,52,96,0.65)', borderRadius: 4
+    },{
+      label: '26년',
+      data: [141,142,196,null,null,null,null,null,null,null,null,null],
+      backgroundColor: 'rgba(201,168,76,0.85)', borderRadius: 4
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top' },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.raw + '건' } }
+    },
+    scales: {
+      y: { grid: { color: 'rgba(0,0,0,0.05)' } },
+      x: { grid: { display: false } }
+    }
+  },
+  plugins: [{
+    id: 'countLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      chart.data.datasets.forEach((ds, di) => {
+        const meta = chart.getDatasetMeta(di);
+        meta.data.forEach((bar, i) => {
+          const val = ds.data[i];
+          if (val == null) return;
+          ctx.save();
+          ctx.fillStyle = di === 0 ? BLUE : '#a07030';
+          ctx.font = 'bold 10px Noto Sans KR';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'bottom';
+          ctx.fillText(val + '건', bar.x, bar.y - 3);
+          ctx.restore();
+        });
+      });
+    }
+  }]
+});
+
+// 3. 연도별 매출 구성 (24/25/26 탕전+약속+기타)
+const yearCtx = document.getElementById('yearCompareChart').getContext('2d');
+new Chart(yearCtx, {
+  type: 'bar',
+  data: {
+    labels: ['24년 (전체)', '25년 (전체)', '26년 (1~3월)'],
+    datasets: [{
+      label: '탕전',
+      data: [150696345, 140938058, 32141118],
+      backgroundColor: DEEP, borderRadius: 4
+    },{
+      label: '약속',
+      data: [1788000, 3980000, 797400],
+      backgroundColor: GOLD, borderRadius: 4
+    },{
+      label: '기타',
+      data: [4244022, 4351800, 0],
+      backgroundColor: 'rgba(15,52,96,0.4)', borderRadius: 4
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top' },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + (ctx.raw/10000).toFixed(0) + '만원' } }
+    },
+    scales: {
+      x: { stacked: true, grid: { display: false } },
+      y: { stacked: true, ticks: { callback: v => (v/10000).toFixed(0)+'만' } }
+    }
+  },
+  plugins: [{
+    id: 'yearLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      // 각 막대 위에 총합 표시
+      const meta0 = chart.getDatasetMeta(0);
+      const meta1 = chart.getDatasetMeta(1);
+      const meta2 = chart.getDatasetMeta(2);
+      const totals = [
+        150696345 + 1788000 + 4244022,
+        140938058 + 3980000 + 4351800,
+        32141118 + 797400 + 0
+      ];
+      ctx.save();
+      meta2.data.forEach((bar, i) => {
+        ctx.fillStyle = '#333';
+        ctx.font = 'bold 11px Noto Sans KR';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillText((totals[i]/10000).toFixed(0) + '만', bar.x, bar.y - 4);
+      });
+      ctx.restore();
+    }
+  }]
+});
+
+// 4. 히트맵 대용 — 건수 극좌표
+const heatCtx = document.getElementById('heatmapChart').getContext('2d');
+new Chart(heatCtx, {
+  type: 'radar',
+  data: {
+    labels: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    datasets: [{
+      label: '25년 처방건수',
+      data: [142,130,142,161,161,165,176,144,187,132,164,157],
+      borderColor: BLUE, backgroundColor: 'rgba(15,52,96,0.12)',
+      borderWidth: 2, pointRadius: 3
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'top' } },
+    scales: { r: { min: 100, max: 200, ticks: { count: 4, font: { size: 9 } } } }
+  }
+});
+
+// 5. 상세 월별 비교
+// 5. 상세 월별 비교
+const detailCtx = document.getElementById('detailMonthChart').getContext('2d');
+new Chart(detailCtx, {
+  type: 'bar',
+  data: {
+    labels: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    datasets: [{
+      label: '25년 처방금액',
+      data: [11295225,10433828,10955912,11971831,12196046,12665109,14175503,10789660,15357402,9039268,10658337,11399937],
+      backgroundColor: 'rgba(15,52,96,0.7)', borderRadius: 3
+    },{
+      label: '26년 처방금액',
+      data: [9780332,9594212,12766574,null,null,null,null,null,null,null,null,null],
+      backgroundColor: 'rgba(201,168,76,0.85)', borderRadius: 3
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top' },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + (ctx.raw/10000).toFixed(1) + '만원' } }
+    },
+    scales: {
+      y: { ticks: { callback: v => v ? (v/10000).toFixed(0)+'만' : '0' }, grid: { color: 'rgba(0,0,0,0.05)' } },
+      x: { grid: { display: false } }
+    }
+  },
+  plugins: [{
+    id: 'detailLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      chart.data.datasets.forEach((ds, di) => {
+        const meta = chart.getDatasetMeta(di);
+        meta.data.forEach((bar, i) => {
+          const val = ds.data[i];
+          if (val == null) return;
+          ctx.save();
+          ctx.fillStyle = di === 0 ? '#0f3460' : '#7a5500';
+          ctx.font = '9px Noto Sans KR';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'bottom';
+          ctx.fillText((val/10000).toFixed(0)+'만', bar.x, bar.y - 2);
+          ctx.restore();
+        });
+      });
+    }
+  }]
+});
+
+// 6. CS 유형 도넛
+const csTypeCtx = document.getElementById('csTypeChart').getContext('2d');
+new Chart(csTypeCtx, {
+  type: 'doughnut',
+  data: {
+    labels: ['기타문의(녹용증서 등)', '주소변경/배송관련', '취소/환불/교환', '처방내용/복용법', '내부 품질관리', '품질/이물질/파손'],
+    datasets: [{
+      data: [340, 280, 95, 65, 75, 26],
+      backgroundColor: [GOLD, DEEP, BLUE, '#e67e22', MUTED, RED],
+      borderWidth: 2, borderColor: '#fff'
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'right', labels: { font: { size: 10 }, padding: 8 } },
+      tooltip: { callbacks: { label: ctx => ctx.label + ': ' + ctx.raw + '건' } }
+    },
+    cutout: '55%'
+  },
+  plugins: [{
+    id: 'donutLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx, data } = chart;
+      const meta = chart.getDatasetMeta(0);
+      const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
+      ctx.save();
+      meta.data.forEach((arc, i) => {
+        const val = data.datasets[0].data[i];
+        const pct = ((val / total) * 100).toFixed(0);
+        if (pct < 5) return;
+        const angle = (arc.startAngle + arc.endAngle) / 2;
+        const r = (arc.innerRadius + arc.outerRadius) / 2;
+        const x = arc.x + Math.cos(angle) * r;
+        const y = arc.y + Math.sin(angle) * r;
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 11px Noto Sans KR';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(pct + '%', x, y);
+      });
+      ctx.restore();
+    }
+  }]
+});
+
+// 7. CS 월별 (26년)
+const csMonthCtx = document.getElementById('csMonthChart').getContext('2d');
+new Chart(csMonthCtx, {
+  type: 'bar',
+  data: {
+    labels: ['26년 1월','26년 2월','26년 3월'],
+    datasets: [{
+      label: '배송관련',
+      data: [28, 32, 18],
+      backgroundColor: DEEP, borderRadius: 3
+    },{
+      label: '녹용증서',
+      data: [18, 22, 24],
+      backgroundColor: GOLD, borderRadius: 3
+    },{
+      label: '취소/기타',
+      data: [8, 6, 5],
+      backgroundColor: 'rgba(15,52,96,0.4)', borderRadius: 3
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top', labels: { font: { size: 10 } } },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + ctx.raw + '건' } }
+    },
+    scales: {
+      x: { stacked: true, grid: { display: false } },
+      y: { stacked: true, grid: { color: 'rgba(0,0,0,0.05)' } }
+    }
+  },
+  plugins: [{
+    id: 'csMonthLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      // 마지막 스택(index 2)만 각 막대 위에 총합 표시
+      const meta2 = chart.getDatasetMeta(2);
+      const totals = [54, 60, 47];
+      ctx.save();
+      meta2.data.forEach((bar, i) => {
+        ctx.fillStyle = '#333';
+        ctx.font = 'bold 11px Noto Sans KR';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'bottom';
+        ctx.fillText(totals[i] + '건', bar.x, bar.y - 4);
+      });
+      ctx.restore();
+    }
+  }]
+});
+
+// 8. CS 상세 분류 바 차트
+const csDetailCtx = document.getElementById('csDetailChart').getContext('2d');
+new Chart(csDetailCtx, {
+  type: 'bar',
+  data: {
+    labels: ['녹용품질보증서\n동봉 요청', '배송일 지정\n요청', '주소 변경', '주문 취소', '영문증명서\n첨부', '처방내용\n수정', '해외 배송', '묶음 배송', '내부 품질\n관리', '파손/이물질'],
+    datasets: [{
+      label: 'CS 건수',
+      data: [340, 180, 100, 95, 55, 40, 12, 8, 75, 26],
+      backgroundColor: [GOLD,GOLD,BLUE,RED,BLUE,BLUE,GREEN,GREEN,MUTED,RED],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.raw + '건' } }
+    },
+    scales: {
+      x: { grid: { color: 'rgba(0,0,0,0.05)' } },
+      y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+    }
+  },
+  plugins: [{
+    id: 'csDetailLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx, data } = chart;
+      const meta = chart.getDatasetMeta(0);
+      ctx.save();
+      meta.data.forEach((bar, i) => {
+        const val = data.datasets[0].data[i];
+        ctx.fillStyle = '#333';
+        ctx.font = 'bold 11px Noto Sans KR';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(val + '건', bar.x + 5, bar.y);
+      });
+      ctx.restore();
+    }
+  }]
+});
+
+
+
+// 11. 약속처방 품목 25년
+const yaksoCtx25 = document.getElementById('yaksoItemChart25').getContext('2d');
+new Chart(yaksoCtx25, {
+  type: 'bar',
+  data: {
+    labels: ['사향공진단', '자운고', '경옥고스틱B'],
+    datasets: [{
+      label: '25년 처방금액 (원)',
+      data: [2974000, 750000, 256000],
+      backgroundColor: [GOLD, GREEN, MUTED],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => (ctx.raw/10000).toFixed(1) + '만원' } }
+    },
+    scales: {
+      x: { ticks: { callback: v => (v/10000).toFixed(0)+'만' }, grid: { color: 'rgba(0,0,0,0.05)' } },
+      y: { grid: { display: false } }
+    }
+  },
+  plugins: [{
+    id: 'yaksoLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx, data } = chart;
+      const meta = chart.getDatasetMeta(0);
+      ctx.save();
+      meta.data.forEach((bar, i) => {
+        const val = data.datasets[0].data[i];
+        if (!val) return;
+        ctx.fillStyle = '#333';
+        ctx.font = 'bold 11px Noto Sans KR';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillText((val/10000).toFixed(1) + '만원', bar.x + 5, bar.y);
+      });
+      ctx.restore();
+    }
+  }]
+});
+
+// 12. 약속처방 24 vs 25 비교
+const yaksoCompCtx = document.getElementById('yaksoCompareChart').getContext('2d');
+new Chart(yaksoCompCtx, {
+  type: 'bar',
+  data: {
+    labels: ['사향공진단', '자운고', '경옥고스틱B'],
+    datasets: [{
+      label: '24년',
+      data: [1788000, 0, 0],
+      backgroundColor: 'rgba(15,52,96,0.6)', borderRadius: 3
+    },{
+      label: '25년',
+      data: [2974000, 750000, 256000],
+      backgroundColor: 'rgba(201,168,76,0.8)', borderRadius: 3
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'top' },
+      tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + (ctx.raw/10000).toFixed(1) + '만원' } }
+    },
+    scales: {
+      y: { ticks: { callback: v => (v/10000).toFixed(0)+'만' }, grid: { color: 'rgba(0,0,0,0.05)' } },
+      x: { grid: { display: false } }
+    }
+  },
+  plugins: [{
+    id: 'yaksoCompLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx, data } = chart;
+      data.datasets.forEach((ds, di) => {
+        const meta = chart.getDatasetMeta(di);
+        meta.data.forEach((bar, i) => {
+          const val = ds.data[i];
+          if (!val) return;
+          ctx.save();
+          ctx.fillStyle = di === 0 ? '#0f3460' : '#7a5500';
+          ctx.font = '9px Noto Sans KR';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'bottom';
+          ctx.fillText((val/10000).toFixed(1)+'만', bar.x, bar.y - 2);
+          ctx.restore();
+        });
+      });
+    }
+  }]
+});
+
+// 13. 트렌드 레이더
+const trendCtx = document.getElementById('trendChart').getContext('2d');
+new Chart(trendCtx, {
+  type: 'radar',
+  data: {
+    labels: ['여성건강\n전문화', '프리미엄\n녹용/보약', '글로벌\n한의수요', '디지털\n탕전시스템', '면역/항노화\n케어', '피부/다이어트\n한방미용'],
+    datasets: [{
+      label: '업계 트렌드 중요도',
+      data: [90, 85, 70, 75, 80, 65],
+      borderColor: BLUE, backgroundColor: 'rgba(15,52,96,0.1)',
+      borderWidth: 2, pointRadius: 4
+    },{
+      label: '박황진 원장 현황 적합도',
+      data: [95, 90, 80, 82, 85, 40],
+      borderColor: GOLD, backgroundColor: 'rgba(201,168,76,0.12)',
+      borderWidth: 2.5, pointRadius: 5
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'top' } },
+    scales: { r: { min: 0, max: 100, ticks: { count: 5, font: { size: 9 } } } }
+  }
+});
+
+// 14. 취소 처방명 빈도
+const cancelCtx = document.getElementById('cancelPrescChart').getContext('2d');
+new Chart(cancelCtx, {
+  type: 'bar',
+  data: {
+    labels: ['시호가용골모려탕', '대청룡탕', '시호거금가령탕', '시호계지탕', '소시호탕', '갈근가반하탕', '시령탕', '황기계지오물탕', '맥문동탕'],
+    datasets: [{
+      label: 'CS 취소 답변 언급 횟수',
+      data: [26, 5, 2, 2, 2, 1, 1, 1, 1],
+      backgroundColor: [DEEP, DEEP, BLUE, BLUE, BLUE, MUTED, MUTED, MUTED, MUTED],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => '취소 ' + ctx.raw + '건' } }
+    },
+    scales: {
+      x: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { stepSize: 5 } },
+      y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+    }
+  },
+  plugins: [{
+    id: 'cancelLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx, data } = chart;
+      const meta = chart.getDatasetMeta(0);
+      ctx.save();
+      meta.data.forEach((bar, i) => {
+        const val = data.datasets[0].data[i];
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 11px Noto Sans KR';
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'middle';
+        const textX = bar.x - 6;
+        if (textX > bar.base + 20) {
+          ctx.fillText(val + '건', textX, bar.y);
+        } else {
+          ctx.fillStyle = '#333';
+          ctx.textAlign = 'left';
+          ctx.fillText(val + '건', bar.x + 5, bar.y);
+        }
+      });
+      ctx.restore();
+    }
+  }]
+});
+
+// 15. 영문증명서 처방+질환 조합
+const engCtx = document.getElementById('engPrescChart').getContext('2d');
+new Chart(engCtx, {
+  type: 'bar',
+  data: {
+    labels: ['소시호+생리통', '소시호+산후풍', '소시호+피로', '소시호+불면', '소시호+PMS', '소시호+두드러기', '소시호+소화불량', '소시호+알러지', '시용모+부종', '시용모+변비', '시용모+견통'],
+    datasets: [{
+      label: '영문증명서 발급 건수',
+      data: [17, 5, 2, 1, 1, 1, 1, 1, 2, 1, 1],
+      backgroundColor: [GOLD,GOLD,GOLD,GOLD,GOLD,GOLD,GOLD,GOLD, BLUE, BLUE, BLUE],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ctx.raw + '건' } }
+    },
+    scales: {
+      x: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { stepSize: 2 } },
+      y: { grid: { display: false }, ticks: { font: { size: 11 } } }
+    }
+  },
+  plugins: [{
+    id: 'engLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx, data } = chart;
+      const meta = chart.getDatasetMeta(0);
+      ctx.save();
+      meta.data.forEach((bar, i) => {
+        const val = data.datasets[0].data[i];
+        ctx.fillStyle = '#333';
+        ctx.font = 'bold 11px Noto Sans KR';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(val + '건', bar.x + 5, bar.y);
+      });
+      ctx.restore();
+    }
+  }]
+});
+
+// 16. 질환 분포 도넛
+const diseaseCtx = document.getElementById('diseaseChart').getContext('2d');
+new Chart(diseaseCtx, {
+  type: 'doughnut',
+  data: {
+    labels: ['생리통 (17건)', '산후풍 (5건)', '부종 (2건)', '피로 (2건)', '기타 (7건)'],
+    datasets: [{
+      data: [17, 5, 2, 2, 7],
+      backgroundColor: [GOLD, DEEP, BLUE, GREEN, MUTED],
+      borderWidth: 2, borderColor: '#fff'
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: 'right', labels: { font: { size: 11 }, padding: 10 } },
+      tooltip: { callbacks: { label: ctx => ctx.label } }
+    },
+    cutout: '55%'
+  },
+  plugins: [{
+    id: 'diseaseLabels',
+    afterDatasetsDraw(chart) {
+      const { ctx, data } = chart;
+      const meta = chart.getDatasetMeta(0);
+      const total = data.datasets[0].data.reduce((a, b) => a + b, 0);
+      ctx.save();
+      meta.data.forEach((arc, i) => {
+        const val = data.datasets[0].data[i];
+        const pct = ((val / total) * 100).toFixed(0);
+        if (pct < 6) return;
+        const angle = (arc.startAngle + arc.endAngle) / 2;
+        const r = (arc.innerRadius + arc.outerRadius) / 2;
+        const x = arc.x + Math.cos(angle) * r;
+        const y = arc.y + Math.sin(angle) * r;
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 12px Noto Sans KR';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(pct + '%', x, y);
+      });
+      ctx.restore();
+    }
+  }]
+});
+
+/* ===== 섹션 4-1: 구간별 분포 차트 ===== */
+const LABELS = ['50만원 미만','50만~1백만원','1백~3백만원','3백~5백만원','5백~1천만원','1천만원 이상'];
+const COL26 = '#E8873A';
+const COL25 = '#4472C4';
+const STAR_COLOR = '#e53935';
+
+// 데이터 (월평균 기준)
+const DATA = {
+  tang26:   { counts:[827,211,242,74,37,15],   starBin:5, starRank:'12/15',   total:1406, val:'10,713,706원' },
+  nongap26: { counts:[840,197,208,52,28,14],   starBin:5, starRank:'11/14',   total:1339, val:'10,713,706원' },
+  yakso26:  { counts:[3116,429,246,39,16,11],  starBin:0, starRank:'590/3116',total:3857, val:'265,800원' },
+  total26:  { counts:[2939,564,477,135,71,29], starBin:5, starRank:'27/29',   total:4215, val:'10,979,506원' },
+  tang25:   { counts:[1284,229,247,79,43,17],  starBin:5, starRank:'12/17',   total:1899, val:'11,744,838원' },
+  nongap25: { counts:[1299,219,218,59,33,15],  starBin:5, starRank:'11/15',   total:1843, val:'11,744,838원' },
+  yakso25:  { counts:[4267,443,219,24,16,11],  starBin:0, starRank:'406/4267',total:4980, val:'331,667원' },
+  total25:  { counts:[4045,577,475,111,75,31], starBin:5, starRank:'22/31',   total:5314, val:'12,439,155원' },
+};
+
+function makeChart(canvasId, key, color) {
+  const d = DATA[key];
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  // 배경색: 211724 해당 구간만 강조
+  const bgColors = d.counts.map((_, i) =>
+    i === d.starBin ? color : color + '55'
+  );
+  const borderColors = d.counts.map((_, i) =>
+    i === d.starBin ? color : color + '88'
+  );
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: LABELS,
+      datasets: [{
+        data: d.counts,
+        backgroundColor: bgColors,
+        borderColor: borderColors,
+        borderWidth: 1,
+        borderRadius: 3,
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ' ' + ctx.raw.toLocaleString() + '명'
+          }
+        },
+        // 수치 + 별 표시
+        afterDraw: null
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(0,0,0,0.06)' },
+          ticks: { font: { size: 10 } }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { font: { size: 11 }, color: '#333' }
+        }
+      },
+      animation: { duration: 600 }
+    },
+    plugins: [{
+      id: 'customLabels',
+      afterDatasetsDraw(chart) {
+        const { ctx, data, scales } = chart;
+        const meta = chart.getDatasetMeta(0);
+        ctx.save();
+        meta.data.forEach((bar, i) => {
+          const value = data.datasets[0].data[i];
+          const isTarget = i === d.starBin;
+
+          // 수치 텍스트
+          ctx.fillStyle = '#333';
+          ctx.font = isTarget ? 'bold 12px Noto Sans KR' : '11px Noto Sans KR';
+          ctx.textAlign = 'left';
+          ctx.textBaseline = 'middle';
+          const x = bar.x + 5;
+          const y = bar.y;
+          ctx.fillText(value.toLocaleString(), x, y);
+
+          // ★ + 순위 표시
+          if (isTarget) {
+            const starText = '★' + d.starRank;
+            const numWidth = ctx.measureText(value.toLocaleString()).width;
+            ctx.fillStyle = STAR_COLOR;
+            ctx.font = 'bold 12px Noto Sans KR';
+            ctx.fillText('  ★' + d.starRank, x + numWidth, y);
+          }
+        });
+        ctx.restore();
+      }
+    }]
+  });
+}
+
+// 탭 전환
+function showTab(tab) {
+  // 모든 뷰 숨기기
+  document.getElementById('view-all').classList.remove('visible');
+  document.querySelectorAll('.charts-grid').forEach(el => {
+    el.querySelectorAll('.chart-panel').forEach(p => p.classList.remove('visible'));
+    el.style.display = 'none';
+  });
+
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+
+  if (tab === 'all') {
+    document.getElementById('view-all').classList.add('visible');
+  } else {
+    const grid = document.getElementById('view-' + tab);
+    grid.style.display = 'grid';
+    grid.querySelectorAll('.chart-panel').forEach(p => p.classList.add('visible'));
+  }
+}
+
+// 페이지 로드 후 차트 그리기
+window.addEventListener('load', () => {
+  // 전체보기 small charts
+  makeChart('all-tang26',   'tang26',   COL26);
+  makeChart('all-nongap26', 'nongap26', COL26);
+  makeChart('all-yakso26',  'yakso26',  COL26);
+  makeChart('all-total26',  'total26',  COL26);
+  makeChart('all-tang25',   'tang25',   COL25);
+  makeChart('all-nongap25', 'nongap25', COL25);
+  makeChart('all-yakso25',  'yakso25',  COL25);
+  makeChart('all-total25',  'total25',  COL25);
+
+  // 개별 탭 charts
+  makeChart('tang26',   'tang26',   COL26);
+  makeChart('tang25',   'tang25',   COL25);
+  makeChart('nongap26', 'nongap26', COL26);
+  makeChart('nongap25', 'nongap25', COL25);
+  makeChart('yakso26',  'yakso26',  COL26);
+  makeChart('yakso25',  'yakso25',  COL25);
+  makeChart('total26',  'total26',  COL26);
+  makeChart('total25',  'total25',  COL25);
+});
+</script>
+</body>
+</html>
